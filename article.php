@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-    <title>News Today</title>
+    <title>Gachi Bank</title>
 </head>
 <body>
     <?php require "blocks/header.php" ?>
@@ -42,7 +42,6 @@
     <div class="container mt-5">
         <h3 class="text-center newnews mb-5"><?php echo $tittle?></h3>
         <div class="" style="margin-left: 1%;">
-            <h6 class="mt-2">Автор: <?php echo $name_users?></h6> 
             <h6 class="float-right">Дата публикации: <?php print(date('d.m.Y',strtotime($date))); ?></h6>
             <!-- ТУТ ГОД И АВТОРА НОРМ ВЫВОДИТЬ -->
         </div>

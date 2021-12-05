@@ -10,13 +10,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <title>News Today</title>
+    <link rel="icon" href="/sys_img/logo.png" type="image/x-icon">.
+    <title>Gachi Bank</title>
 </head>
 <body>
     <?php require "blocks/header.php" ?>
 
     <div class="container mt-5">
-        <div style="text-align: center;"> <h3 class="newnews mb-5">Актуальные новости банка</h3> </div>
+        <div style="text-align: center;"> <h3 class="newnews mb-5">Статьи от банка</h3> </div>
 
 
         <?php
@@ -49,7 +50,6 @@
                 <div class="card-header py-3">
                     <h4 class="my-0 fw-normal"><?php print_r( $post['tittle']); ?></h4>
                     <div class="">
-                        <h6 class="mt-2">Aвтор: <?php print_r( $post['name_users']); ?> </h6> 
                         <h6 class="float-right">Дата публикации: <?php print(date('d.m.Y',strtotime($post['date']))); ?></h6>
                         <!-- НАДО ПРАВИЛЬНОГО АВТОРА -->
                     </div>
