@@ -1,0 +1,20 @@
+name: PHP
+
+on:
+  push:
+    branches: [ master ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      hostname: ${{ secrets.HOSTNAME }}
+      password: ${{ secrets.PASSWORD }}
+      ssh_port: ${{ secrets.SSH_PORT }}
+
+    steps:
+    - uses: actions/checkout@v2
+      
+    - name: Upload artifacts
+      run:  rsync -ratlz --rsh="/usr/bin/sshpass -p $password ssh -o StrictHostKeyChecking=no -l deploy -p $ssh_port" ./ deploy@$hostname:/home/deploy/php/
