@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="/sys_img/logo.png" type="image/x-icon">.
-    <title>Gachi Bank</title>
+    <title>DruzhBank</title>
 </head>
 <body>
     <?php require "blocks/header.php" ?>
