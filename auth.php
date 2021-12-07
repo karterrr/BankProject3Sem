@@ -34,7 +34,7 @@
                     </div>
                     <input class="form-control btn-primary" type="submit" name="sub" value="Войти" />
                 </form>
-                <p class="text-center">Ещё не успели зарегестрироваться? Тогда сделайте это прямо сейчас</p>
+                <p class="text-center">Ещё не успели зарегистрироваться? Тогда сделайте это прямо сейчас</p>
                 <button type="button" class="newnews btn btn-secondary mb-5" onclick="document.location='registration.php'">Регистрация</button>
             </div>
             
