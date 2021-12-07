@@ -8,7 +8,7 @@
         <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
             <a href="/index.php" class="d-flex align-items-center text-dark text-decoration-none">
                 <img src="/sys_img/logo.png" wight="50" height="50"></img>
-                <span class="fs-4">Гачи Банк</span>
+                <span class="fs-4">DruzhBank</span>
             </a>
 
             <nav class="menu d-inline-flex mt-2 mt-md-0 ms-md-auto">
