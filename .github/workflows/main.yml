@@ -9,12 +9,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
+      keylink:  ${{ secrets.KEYLINK }}
       hostname: ${{ secrets.HOSTNAME }}
-      password: ${{ secrets.PASSWORD }}
       ssh_port: ${{ secrets.SSH_PORT }}
 
     steps:
     - uses: actions/checkout@v2
-      
+
+    - name: Download SSH key
+      run: wget -O k.key "$keylink";chmod 400 k.key
     - name: Upload artifacts
-      run:  rsync -ratlz --rsh="/usr/bin/sshpass -p $password ssh -o StrictHostKeyChecking=no -l deploy -p $ssh_port" ./ deploy@$hostname:/home/deploy/php/
+      run:  rsync -ratlz --rsh="ssh -i k.key -o StrictHostKeyChecking=no -l deploy" ./ deploy@$hostname:/home/deploy/php/
