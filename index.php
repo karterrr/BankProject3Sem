@@ -16,6 +16,13 @@
 <body>
     <?php require "blocks/header.php" ?>
 
+    <?php 
+        if(!isset($_SESSION['id']))
+        {
+            header("Location:/auth.php");  
+        }
+    ?>
+
     <div class="container mt-5">
         <div style="text-align: center;"> <h3 class="newnews mb-5">Статьи от банка</h3> </div>
 
