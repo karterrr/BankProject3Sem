@@ -15,7 +15,7 @@
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <link rel="stylesheet" href="css/style.css">
             <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
-            <script src="../js/show_pass.js"></script>
+            <script src="../js/main.js"></script>
             <title>Вход</title>
         </head>
         <body>

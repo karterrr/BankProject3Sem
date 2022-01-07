@@ -10,7 +10,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" href="/sys_img/logo.png" type="image/x-icon">.
+    <link rel="icon" href="/sys_img/logo.png" type="image/x-icon">
+    <script src="../js/main.js"></script>
     <title>DruzhBank</title>
 </head>
 <body>
