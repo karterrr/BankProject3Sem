@@ -26,7 +26,8 @@
                         <img src="sys_img/logo.png" wight="100" height="100" class="mt-5"></img>
                     </a>
                     <h1 class="h3 mb-3 font-weight-normal">Регистрация</h1>
-                    <input class="form-control mb-1" type="text" name="login" placeholder="Имя" required=""/>
+                    <input class="form-control mb-1" type="text" name="login" placeholder="Логин" required=""/>
+                    <input class="form-control mb-1" type="text" name="name" placeholder="Имя" required=""/>
                     <div class="password">
                         <input id="password-input" class="form-control mb-1" type="password" name="password" placeholder="Пароль" required=""/>
                         <a href="#" class="password-control" onclick="return show_hide_password(this);"></a>

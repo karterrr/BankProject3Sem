@@ -7,11 +7,53 @@ if(!isset($_SESSION['id']))
 {
     if(isset($_POST['sub']))
     {
-        $email=$_POST['email'];
+        $login=$_POST['login'];
         $password=$_POST['password'];
 
-        //print $email." ".$password;
+        
+        $url = "http://lightfire.duckdns.org/login";
+        
+        $data = array(
+            'login' => $login,
+            'password' => $password
+        );
 
+        $options = stream_context_create(array(
+            'http' => array(
+                'method'  => 'POST',
+                'content' => json_encode( $data ),
+                'header'=>  "Content-Type: application/json\r\n",
+            )
+        ));
+
+
+        $response = file_get_contents( $url, FALSE, $options);
+        // Check for errors
+        if($response === FALSE){
+            print "блять";
+        }
+
+        //var_dump($response);
+
+        // Decode the response
+        $responseData = json_decode($response);
+
+        // Print the date from the response
+        if($responseData -> success ===TRUE)
+        {
+            $_SESSION['id'] = $responseData -> data -> token;
+            $_SESSION['password']=$password;
+            $_SESSION['login']=$login;
+
+            header("Location:/index.php");
+        }
+        else
+        {
+            header("Location: /auth_error.php");
+        }
+
+
+        /*
         $query=mysqli_query($db, "SELECT * FROM `users_attribute` WHERE `email`='$email' AND `password`='$password' ");
 
         if(mysqli_num_rows($query)>0)
@@ -41,6 +83,8 @@ if(!isset($_SESSION['id']))
     {
         header("Location:/index.php");
     }
+    */
+}
 }
 else
 {

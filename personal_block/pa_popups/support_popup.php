@@ -1,4 +1,4 @@
-<script src="../js/main.js"></script>
+<script src="../js/copy_text.js"></script>
 
 <div id="popup9" class="popup">
     <a href="#" class="popup__area"></a>
