@@ -1,9 +1,10 @@
 <?php
-    session_start();
-    require "server/config.php";
+session_start();
+require "server/config.php";
 ?>
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,18 +14,20 @@
     <link rel="icon" href="/sys_img/logo.png" type="image/x-icon">.
     <title>DruzhBank</title>
 </head>
+
 <body>
     <?php require "blocks/header.php" ?>
 
-    <?php 
-        if(!isset($_SESSION['id']))
-        {
-            header("Location:/auth.php");  
-        }
+    <?php
+    if (!isset($_SESSION['id'])) {
+        header("Location:/auth.php");
+    }
     ?>
 
     <div class="container mt-5">
-        <div style="text-align: center;"> <h3 class="newnews mb-5">Статьи от банка</h3> </div>
+        <div style="text-align: center;">
+            <h3 class="newnews mb-5">Главная страница</h3>
+        </div>
 
 
         <?php
@@ -34,7 +37,7 @@
         //print $_SESSION['login'];
         //print $_SESSION['email'];
         //print $_SESSION['id'];
-
+        /*
         if(isset($_SESSION['id']))
         {
             
@@ -47,34 +50,39 @@
             }
                 
         }?>
+        */
+        ?>
         <!-- к этой кнопеке надо прикрутить проверку на админа хз как -->
 
-        <div class="d-flex flex-wrap">
-        <?php require "server/fun_spawn_news.php"; 
-            $result=get_news();
-            while ($post= mysqli_fetch_assoc($result)) { ?>
-            <div class="card mb-4 rounded-3 shadow-sm">
-                <div class="card-header py-3">
-                    <h4 class="my-0 fw-normal"><?php print_r( $post['tittle']); ?></h4>
-                    <div class="">
-                        <h6 class="float-right">Дата публикации: <?php print(date('d.m.Y',strtotime($post['date']))); ?></h6>
-                        <!-- НАДО ПРАВИЛЬНОГО АВТОРА -->
-                    </div>
-                </div>
-                <div class="card-body">
-                    <div> <img src="news_img/<?php print_r($post['img_id']); ?>.jpg" class="img-thumbnail rounded mx-auto d-block" width="50%">
-                        <h5><?php print_r($post['intro_text']); ?></h5>
-                    </div>
-                    <form action="article.php" method="get">
-                    <button  id="id_n"  name="id_n" value=<?php print_r($post['id']); ?> 
-                    class="w-100 btn btn-lg btn-outline-primary" onclick="document.location='article.php'">Подробнее</button>
-                    </form>
-                </div>
-            </div>
-            <?php }; ?>
+        <div class="inlineBlock">
+            <table class="informer_table">
+                <thead>
+                    <tr>
+                        <th colspan="2" class="table_name"><a target="_blank" >Курсы валют ЦБ РФ</a></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="col2">
+                        <th>Валюта</th>
+                        <th>RUB</th>
+                    </tr>
+                    <tr class="col2" data-symbol="Доллар США" data-id="2" data-precision="">
+                        <td class="amount arrow"><span class="style2ImgWrap"><img src="https://files.fortrader.org/service_uploads/country/flags/shiny/16/US.png" alt=""></span><a style="width: 27px;">USD</a></td>
+                        <td class="changeVal" data-column="todayCourse">74.2926</td>
+                    </tr>
+                    <tr class="col2" data-symbol="Евро" data-id="21" data-precision="">
+                        <td class="amount arrow"><span class="style2ImgWrap"><img src="https://files.fortrader.org/service_uploads/country/flags/shiny/16/EU.png" alt=""></span><a style="width: 27px;">EUR</a></td>
+                        <td class="changeVal" data-column="todayCourse">84.0695</td>
+                    </tr>
+                    <tr class="col-data">
+                        <td colspan="2" class="table_name"><time class="ftDateTime" datetime="2022-01-09UTC13:26">Дата <span class="ftDateTimeStr">09.01.2022</span></time></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
-<!-- test -->
+    <!-- test -->
     <?php require "blocks/footer.php" ?>
 </body>
+
 </html>
