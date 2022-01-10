@@ -52,10 +52,9 @@ if(isset($_SESSION['id']))
 
 
         $data = array(
-            'cur_password' => $cur_password,
+            'old_password' => $cur_password,
             'new_password' => $new_password,
-            'id' => $_SESSION['id']
-
+            'token' => $_SESSION['id']
         );
 
        // var_dump($data);
@@ -79,17 +78,18 @@ if(isset($_SESSION['id']))
          // Decode the response
         $responseData = json_decode($response);
 
-        var_dump($responseData);
+        //var_dump($responseData);
         if($responseData -> success ===TRUE)
         {
-            $_SESSION['id'] = $responseData -> data;
+            $_SESSION['password'] = $new_password;
+            $_SESSION['id']= $responseData -> data;
 
-           // header("Location:/index.php");
-           print ("work");
+           header('Location: /personal_block/account_set.php#popup4');
+           //print ("work");
         }
         else
         {
-            print $_POST['cur_password'];
+            echo "Ошибка! Пароль не изменён";
         }
 
         // сохраняем данные

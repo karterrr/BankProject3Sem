@@ -46,8 +46,8 @@ require "../server/config.php";
                 Сменить имя
                 <form action="/server/change_name.php" method="post">
                     <h3 class="h4 mt-5">Ваше текущее имя</h3>
-                    <h3 class="mt-4"><?php print $_SESSION['login']?></h3>
-                    <input class="form-control mt-5 mb-2" type="text" name="new_login" placeholder="Новое имя" required=""/>
+                    <h3 class="mt-4"><?php print $_SESSION['name']?></h3>
+                    <input class="form-control mt-5 mb-2" type="text" name="new_name" placeholder="Новое имя" required=""/>
                     <div class="d-grid">
                         <button type="submit" name="sub" class="btn btn-primary mt-4 ">Изменить имя</button>
                     </div>

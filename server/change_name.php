@@ -6,25 +6,26 @@ require "config.php";
 
 //include 'auth.php'
 
-if(isset($_SESSION['id']))
-{
-    if(isset($_POST['sub']))
-    {
-    
-        if (isset($_POST['new_name'])) { $new_name = $_POST['new_name']; if ($new_name == '') { unset($new_name);} } //заносим введенный пользователем логин в переменную $login, если он пустой, то уничтожаем переменную
+if (isset($_SESSION['id'])) {
+    if (isset($_POST['sub'])) {
+
+        if (isset($_POST['new_name'])) {
+            $new_name = $_POST['new_name'];
+            if ($new_name == '') {
+                unset($new_name);
+            }
+        } //заносим введенный пользователем логин в переменную $login, если он пустой, то уничтожаем переменную
 
         //print $email." ".$password;
-       /* if (mb_strtolower($new_name)==mb_strtolower($_SESSION['name']))
-        {
+        if (mb_strtolower($new_name) == mb_strtolower($_SESSION['name'])) {
 
             header("Location: /personal_block/account_set.php#popup1");
-            exit( "Введённый вами логин совпадает с нынешним <br/>". "<a href= /personal_block/personal_area.php>Back</a>");
-
+            exit("Введённое вами имя совпадает с нынешним <br/>" . "<a href= /personal_block/personal_area.php>Back</a>");
         }
         if (empty($new_name)) //если пользователь не ввел логин, то выдаем ошибку и останавливаем скрипт
-            {
-                exit( "Вы ввели не всю информацию, вернитесь назад и заполните все поля! <br/>". "<a href= /personal_block/account_set.php>Back</a>");
-            }*/
+        {
+            exit("Вы ввели не всю информацию, вернитесь назад и заполните все поля! <br/>" . "<a href= /personal_block/account_set.php>Back</a>");
+        }
         //если логин введен, то обрабатываем, чтобы теги и скрипты не работали, мало ли что люди могут ввести
         $new_name = stripslashes($new_name);
         $new_name = htmlspecialchars($new_name);
@@ -34,34 +35,45 @@ if(isset($_SESSION['id']))
         // файл bd.php должен быть в той же папке, что и все остальные, если это не так, то просто измените путь 
         // проверка на существование пользователя с таким же логином
 
-           // $token = $_SESSION['id'] -> data -> token;
+        // $token = $_SESSION['id'] -> data -> token;
 
-           // print $token;
+        // print $token;
 
-           $url = "http://lightfire.duckdns.org/editeuser";
+        $url = "http://lightfire.duckdns.org/editeusername";
 
-         //  $_SESSION['login'] = $new_login;
+        //  $_SESSION['login'] = $new_login;
 
-            $data = array(
-                'new_name' => $new_name,
-                'id' => $_SESSION['id']
+        $data = array(
+            'name' => $new_name,
+            'token' => $_SESSION['id']
 
-            );
-
-
-            $options = stream_context_create(array(
-                'http' => array(
-                    'method'  => 'PUT',
-                    'content' => json_encode( $data ),
-                    'header'=>  "Content-Type: application/json\r\n",
-                )
-            ));
+        );
 
 
-            header('Location: /personal_block/account_set.php#popup3');
+        $options = stream_context_create(array(
+            'http' => array(
+                'method'  => 'PUT',
+                'content' => json_encode($data),
+                'header' =>  "Content-Type: application/json\r\n",
+            )
+        ));
+
+        $response = file_get_contents($url, FALSE, $options);
+        // Check for errors
+
+        // Decode the response
+        $responseData = json_decode($response);
+
+        //var_dump($response);
+        // Print the date from the response
+        if ($responseData == TRUE) {
             
-    
+            $_SESSION['name'] = $new_name;
+            header('Location: /personal_block/account_set.php#popup3');
 
+        } else {
+            exit("Не удалось сменить имя <br/>" . "<a href= /personal_block/account_set.php>Back</a>");
+        }
 
         /*$result = mysqli_query($db, "SELECT * FROM `users_attribute` WHERE `login`='$new_login'");
         $myrow = mysqli_fetch_array($result);
@@ -87,14 +99,9 @@ if(isset($_SESSION['id']))
         else {
             echo "Ошибка! Пароль не изменён";
         }*/
-    }
-    else
-    {
+    } else {
         header("Location:/index.php");
     }
-}
-else
-{
+} else {
     header("Location:/index.php");
 }
-?>
