@@ -21,13 +21,13 @@
     width: 100%;
 }
 
-.informer_table th {
+th {
     font-weight: normal;
     color: rgb(0, 0, 0);
     padding: 10px 15px;
 }
 
-.informer_table td {
+td {
     color: #669;
     border-top: 1px solid #e8edff;
     padding: 10px 15px;

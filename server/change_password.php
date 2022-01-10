@@ -44,11 +44,56 @@ if(isset($_SESSION['id']))
         $new_password = trim($new_password);
         $new_password_check = trim($new_password_check);
 
-        $password=$_SESSION['password'];
-        $login=$_SESSION['login'];
+        //$password=$_SESSION['password'];
+        //$login=$_SESSION['login'];
+
+
+        $url = "http://lightfire.duckdns.org/editepassword";
+
+
+        $data = array(
+            'cur_password' => $cur_password,
+            'new_password' => $new_password,
+            'id' => $_SESSION['id']
+
+        );
+
+       // var_dump($data);
+
+        $options = stream_context_create(array(
+            'http' => array(
+                'method'  => 'PUT',
+                'content' => json_encode( $data ),
+                'header'=>  "Content-Type: application/json\r\n",
+            )
+        ));
+
+        $response = file_get_contents( $url, FALSE, $options);
+        // Check for errors
+        if($response === FALSE){
+            print "блять";
+        }
+ 
+         //var_dump($response);
+ 
+         // Decode the response
+        $responseData = json_decode($response);
+
+        var_dump($responseData);
+        if($responseData -> success ===TRUE)
+        {
+            $_SESSION['id'] = $responseData -> data;
+
+           // header("Location:/index.php");
+           print ("work");
+        }
+        else
+        {
+            print $_POST['cur_password'];
+        }
 
         // сохраняем данные
-        $result2 = mysqli_query ($db,"UPDATE `users_attribute` SET `password`='$new_password' WHERE `login`='$login'");
+        /*$result2 = mysqli_query ($db,"UPDATE `users_attribute` SET `password`='$new_password' WHERE `login`='$login'");
         // Проверяем, есть ли ошибки
         if ($result2=='TRUE')
         {
@@ -60,7 +105,7 @@ if(isset($_SESSION['id']))
         else 
         {
             echo "Ошибка! Пароль не изменён";
-        }
+        }*/
     }
     else
     {

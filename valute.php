@@ -22,6 +22,7 @@ require "server/config.php";
     if (!isset($_SESSION['id'])) {
         header("Location:/auth.php");
     }
+    echo $_SESSION ['name'];
     ?>
     <div class="container mt-5">
 
