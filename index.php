@@ -53,7 +53,6 @@ require "server/config.php";
         */
         ?>
         <!-- к этой кнопеке надо прикрутить проверку на админа хз как -->
-
         <div class="inlineBlock">
             <table class="informer_table">
                 <thead>
@@ -66,16 +65,9 @@ require "server/config.php";
                         <th>Валюта</th>
                         <th>RUB</th>
                     </tr>
-                    <tr class="col2" data-symbol="Доллар США" data-id="2" data-precision="">
-                        <td class="amount arrow"><span class="style2ImgWrap"><img src="https://files.fortrader.org/service_uploads/country/flags/shiny/16/US.png" alt=""></span><a style="width: 27px;">USD</a></td>
-                        <td class="changeVal" data-column="todayCourse">74.2926</td>
-                    </tr>
-                    <tr class="col2" data-symbol="Евро" data-id="21" data-precision="">
-                        <td class="amount arrow"><span class="style2ImgWrap"><img src="https://files.fortrader.org/service_uploads/country/flags/shiny/16/EU.png" alt=""></span><a style="width: 27px;">EUR</a></td>
-                        <td class="changeVal" data-column="todayCourse">84.0695</td>
-                    </tr>
+                    <?php require "server/valute.php" ?>
                     <tr class="col-data">
-                        <td colspan="2" class="table_name"><time class="ftDateTime" datetime="2022-01-09UTC13:26">Дата <span class="ftDateTimeStr">09.01.2022</span></time></td>
+                        <td colspan="2" class="table_name"><time class="ftDateTime" datetime="2022-01-09UTC13:26">Дата <span class="ftDateTimeStr"><?php echo $date ?></span></time></td>
                     </tr>
                 </tbody>
             </table>

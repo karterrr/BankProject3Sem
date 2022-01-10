@@ -6,6 +6,7 @@
 .table_name {
     font-weight: bold;
     text-align: center;
+    background-color: rgb(243, 241, 241);
 }
 
 .informer_table {
