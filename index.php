@@ -22,11 +22,10 @@ require "server/config.php";
     if (!isset($_SESSION['id'])) {
         header("Location:/auth.php");
     }
-    echo $_SESSION ['name'];
     ?>
     <div class="container mt-5">
         <div style="text-align: center;">
-            <h3 class="newnews mb-5">Главная страница</h3>
+            <h3 class="newnews mb-5"><?php echo $_SESSION['name']; ?></h3>
         </div>
 
 

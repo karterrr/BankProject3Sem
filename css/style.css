@@ -9,6 +9,10 @@
     background-color: rgb(243, 241, 241);
 }
 
+.newnews mb-5 h3{
+    font-size: 50px;
+}
+
 .informer_table {
     text-align: center;
     border: 5px solid white;
