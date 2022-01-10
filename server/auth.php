@@ -44,33 +44,6 @@ if(!isset($_SESSION['id']))
             $_SESSION['id'] = $responseData -> data -> token;
             $_SESSION['password']=$password;
             $_SESSION['login']=$login;
-            $_SESSION ['name'] = $responseData -> data -> name;
-            /*
-            $datagetuser = array(
-                'login' => $login,
-                'password' => $password
-            );
-    
-            $optionsgetuser = stream_context_create(array(
-                'http' => array(
-                    'method'  => 'POST',
-                    'content' => json_encode( $datagetuser ),
-                    'header'=>  "Content-Type: application/json\r\n",
-                )
-            ));
-    
-    
-            $responsegetuser = file_get_contents( $url, FALSE, $optionsgetuser);
-            // Check for errors
-            if($responsegetuser === FALSE){
-                print "блять";
-            }
-
-            $responseDatagetuser = json_decode($responsegetuser);
-
-            $_SESSION ['name'] = $responseDatagetuser -> data -> name;
-            var_dump($responseDatagetuser);
-            */
 
             header("Location:/index.php");
         }

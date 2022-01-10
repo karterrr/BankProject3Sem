@@ -67,6 +67,7 @@ if(!isset($_SESSION['id']))
         if($responseData -> success ===TRUE)
         {
             $_SESSION['id'] = $responseData -> data;
+
             $_SESSION['password']=$password;
             $_SESSION['login']=$login;
             $_SESSION['name']=$name;

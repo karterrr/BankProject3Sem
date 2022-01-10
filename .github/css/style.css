@@ -1,0 +1,292 @@
+.card {
+    width: 32%;
+    margin-left: 1%;
+}
+
+
+
+.newnews {
+    margin-left: 1%;
+}
+
+.users_list {
+	margin-left: -4px !important;
+	margin-right: -20px !important;
+}
+
+.font-weight-normal {
+    font-weight: 400!important;
+}
+
+.form-signin {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+}
+.menu a.active {
+    color: #007bff!important;
+}
+
+.col {
+    margin-left: 1%;
+}
+
+.first-col {
+	margin-left: 0%;
+}
+
+.vertical-center {
+    display: flex;
+    align-items: center;
+}
+/*  */
+body{margin-top:20px;}
+
+.content-item {
+    padding:30px 0;
+	background-color:#FFFFFF;
+}
+
+.content-item.grey {
+	background-color:#F0F0F0;
+	padding:50px 0;
+	height:100%;
+}
+
+.content-item h2 {
+	font-weight:700;
+	font-size:35px;
+	line-height:45px;
+	text-transform:uppercase;
+	margin:20px 0;
+}
+
+.content-item h3 {
+	font-weight:400;
+	font-size:20px;
+	color:#555555;
+	margin:10px 0 15px;
+	padding:0;
+}
+
+.content-headline {
+	height:1px;
+	text-align:center;
+	margin:20px 0 70px;
+}
+
+.content-headline h2 {
+	background-color:#FFFFFF;
+	display:inline-block;
+	margin:-20px auto 0;
+	padding:0 20px;
+}
+
+.grey .content-headline h2 {
+	background-color:#F0F0F0;
+}
+
+.content-headline h3 {
+	font-size:14px;
+	color:#AAAAAA;
+	display:block;
+}
+
+
+#comments {
+    box-shadow: 0 -1px 6px 1px rgba(0,0,0,0.1);
+	background-color:#FFFFFF;
+}
+
+#comments form {
+	margin-bottom:30px;
+}
+
+#comments .btn {
+	margin-top:7px;
+}
+
+#comments form fieldset {
+	clear:both;
+}
+
+#comments form textarea {
+	height:100px;
+}
+
+#comments .media {
+	border-top:1px dashed #DDDDDD;
+	padding:20px 0;
+	margin:0;
+}
+
+#comments .media > .pull-left {
+    margin-right:20px;
+}
+
+#comments .media img {
+	max-width:100px;
+	max-height: 100px;
+	width: 100px !important;
+	height: 100px !important;
+}
+
+#comments .media h4 {
+	margin:0 0 10px;
+}
+
+#comments .media h4 span {
+	font-size:14px;
+	float:right;
+	color:#999999;
+}
+
+#comments .media p {
+	margin-bottom:15px;
+	text-align:justify;
+}
+
+#comments .media-detail {
+	margin:0;
+}
+
+#comments .media-detail li {
+	color:#AAAAAA;
+	font-size:12px;
+	padding-right: 10px;
+	font-weight:600;
+}
+
+#comments .media-detail a:hover {
+	text-decoration:underline;
+}
+
+#comments .media-detail li:last-child {
+	padding-right:0;
+}
+
+#comments .media-detail li i {
+	color:#666666;
+	font-size:15px;
+	margin-right:10px;
+}
+
+.user-img {
+	width: 200px !important;
+	height:  200px!important;
+}
+
+.user-img-com {
+	width: 100px !important;
+	height:  100px!important;
+}
+
+.user-img-div {
+	
+}
+
+.user-img-min {
+    width: 45px !important;
+    height: 45px !important;
+}
+
+.users_search {
+	width: 100%;
+	max-width: 350px;
+	display:inline-block !important;
+}
+
+.popup {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background-color: #00000094;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	visibility: hidden;
+	overflow-y: auto;
+	overflow-x: hidden;
+	transition: all  0.8s ease 0s;
+}
+
+.popup:target {
+	opacity: 1;
+	visibility: visible;
+}
+
+.popup:target .popup__content {
+		transform: translate(0px, 0px);
+		opacity: 1;
+}
+
+.popup__area {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	cursor: default;
+}
+
+.popup__body {
+	min-height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 30px 10px;
+}
+
+.popup__content {
+	background-color: #FFFFFF;
+	color: black;
+	max-width: 800px;
+	padding: 30px;
+	position: relative;
+	transition: 0.8s ease 0s;
+	opacity: 0;
+	transform: translate(0px, -100%);
+}
+
+.popup__close {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	font-size: 20px;
+	color: black;
+	text-decoration: none;
+}
+
+.popup__title{
+	font-size: 30px;
+	margin-bottom: 0px 0px 1em 0px;
+}
+
+.popup__text {
+
+}
+
+.password {
+	position: relative;
+}
+.password .password-control {
+	position: absolute;
+	top: 11px;
+	right: 6px;
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	background: url(https://snipp.ru/demo/495/view.svg) 0 0 no-repeat;
+}
+.password .password-control.view {
+	background: url(https://snipp.ru/demo/495/no-view.svg) 0 0 no-repeat;
+}
+
+.copied-label-hide {
+	visibility: hidden;
+}
+
+.copied-label-act {
+	visibility: visible;
+}

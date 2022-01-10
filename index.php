@@ -23,9 +23,10 @@ require "server/config.php";
         header("Location:/auth.php");
     }
     ?>
+
     <div class="container mt-5">
         <div style="text-align: center;">
-            <h3 class="newnews mb-5"><?php echo $_SESSION['name']; ?></h3>
+            <h3 class="newnews mb-5">Главная страница</h3>
         </div>
 
 
@@ -52,8 +53,32 @@ require "server/config.php";
         */
         ?>
         <!-- к этой кнопеке надо прикрутить проверку на админа хз как -->
+
         <div class="inlineBlock">
-            
+            <table class="informer_table">
+                <thead>
+                    <tr>
+                        <th colspan="2" class="table_name"><a target="_blank" >Курсы валют ЦБ РФ</a></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="col2">
+                        <th>Валюта</th>
+                        <th>RUB</th>
+                    </tr>
+                    <tr class="col2" data-symbol="Доллар США" data-id="2" data-precision="">
+                        <td class="amount arrow"><span class="style2ImgWrap"><img src="https://files.fortrader.org/service_uploads/country/flags/shiny/16/US.png" alt=""></span><a style="width: 27px;">USD</a></td>
+                        <td class="changeVal" data-column="todayCourse">74.2926</td>
+                    </tr>
+                    <tr class="col2" data-symbol="Евро" data-id="21" data-precision="">
+                        <td class="amount arrow"><span class="style2ImgWrap"><img src="https://files.fortrader.org/service_uploads/country/flags/shiny/16/EU.png" alt=""></span><a style="width: 27px;">EUR</a></td>
+                        <td class="changeVal" data-column="todayCourse">84.0695</td>
+                    </tr>
+                    <tr class="col-data">
+                        <td colspan="2" class="table_name"><time class="ftDateTime" datetime="2022-01-09UTC13:26">Дата <span class="ftDateTimeStr">09.01.2022</span></time></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
     <!-- test -->

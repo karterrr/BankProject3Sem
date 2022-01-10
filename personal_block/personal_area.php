@@ -57,7 +57,7 @@ require "../server/config.php";
             </div>
             <div class="col mt-5 h2">
                 <?php
-                   print $_SESSION['email']
+                   print $_SESSION['name']
                 ?>
                 <!-- Тут отображается логин -->
             </div>

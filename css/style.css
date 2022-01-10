@@ -6,28 +6,24 @@
 .table_name {
     font-weight: bold;
     text-align: center;
-    background-color: rgb(243, 241, 241);
-}
-
-.newnews mb-5 h3{
-    font-size: 50px;
 }
 
 .informer_table {
     text-align: center;
-    border: 5px solid white;
+    border: 2px solid white;
     width: 500px;
     border-collapse: collapse;
-    width: 100%;
+    max-width: 40%;
+    width: 40%;
 }
 
-.informer_table th {
+th {
     font-weight: normal;
     color: rgb(0, 0, 0);
     padding: 10px 15px;
 }
 
-.informer_table td {
+td {
     color: #669;
     border-top: 1px solid #e8edff;
     padding: 10px 15px;

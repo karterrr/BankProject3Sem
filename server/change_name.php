@@ -4,35 +4,66 @@ session_start();
 
 require "config.php";
 
+//include 'auth.php'
+
 if(isset($_SESSION['id']))
 {
     if(isset($_POST['sub']))
     {
     
-        if (isset($_POST['new_login'])) { $new_login = $_POST['new_login']; if ($new_login == '') { unset($new_login);} } //заносим введенный пользователем логин в переменную $login, если он пустой, то уничтожаем переменную
+        if (isset($_POST['new_name'])) { $new_name = $_POST['new_name']; if ($new_name == '') { unset($new_name);} } //заносим введенный пользователем логин в переменную $login, если он пустой, то уничтожаем переменную
 
         //print $email." ".$password;
-        if (mb_strtolower($new_login)==mb_strtolower($_SESSION['login']))
+       /* if (mb_strtolower($new_name)==mb_strtolower($_SESSION['name']))
         {
 
             header("Location: /personal_block/account_set.php#popup1");
             exit( "Введённый вами логин совпадает с нынешним <br/>". "<a href= /personal_block/personal_area.php>Back</a>");
 
         }
-        if (empty($new_login)) //если пользователь не ввел логин, то выдаем ошибку и останавливаем скрипт
+        if (empty($new_name)) //если пользователь не ввел логин, то выдаем ошибку и останавливаем скрипт
             {
                 exit( "Вы ввели не всю информацию, вернитесь назад и заполните все поля! <br/>". "<a href= /personal_block/account_set.php>Back</a>");
-            }
+            }*/
         //если логин введен, то обрабатываем, чтобы теги и скрипты не работали, мало ли что люди могут ввести
-        $new_login = stripslashes($new_login);
-        $new_login = htmlspecialchars($new_login);
+        $new_name = stripslashes($new_name);
+        $new_name = htmlspecialchars($new_name);
         //удаляем лишние пробелы
-        $new_login = trim($new_login);
+        $new_name = trim($new_name);
         // подключаемся к базе
         // файл bd.php должен быть в той же папке, что и все остальные, если это не так, то просто измените путь 
         // проверка на существование пользователя с таким же логином
 
-        $result = mysqli_query($db, "SELECT * FROM `users_attribute` WHERE `login`='$new_login'");
+           // $token = $_SESSION['id'] -> data -> token;
+
+           // print $token;
+
+           $url = "http://lightfire.duckdns.org/editeuser";
+
+         //  $_SESSION['login'] = $new_login;
+
+            $data = array(
+                'new_name' => $new_name,
+                'id' => $_SESSION['id']
+
+            );
+
+
+            $options = stream_context_create(array(
+                'http' => array(
+                    'method'  => 'PUT',
+                    'content' => json_encode( $data ),
+                    'header'=>  "Content-Type: application/json\r\n",
+                )
+            ));
+
+
+            header('Location: /personal_block/account_set.php#popup3');
+            
+    
+
+
+        /*$result = mysqli_query($db, "SELECT * FROM `users_attribute` WHERE `login`='$new_login'");
         $myrow = mysqli_fetch_array($result);
 
         if (!empty($myrow['id'])) 
@@ -55,7 +86,7 @@ if(isset($_SESSION['id']))
         }
         else {
             echo "Ошибка! Пароль не изменён";
-        }
+        }*/
     }
     else
     {
