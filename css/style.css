@@ -11,11 +11,10 @@
 
 .informer_table {
     text-align: center;
-    border: 2px solid white;
+    border: 5px solid white;
     width: 500px;
     border-collapse: collapse;
-    max-width: 40%;
-    width: 40%;
+    width: 100%;
 }
 
 th {

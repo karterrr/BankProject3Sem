@@ -25,9 +25,6 @@ require "server/config.php";
     echo $_SESSION ['name'];
     ?>
     <div class="container mt-5">
-        <div style="text-align: center;">
-            <h3 class="newnews mb-5">Главная страница</h3>
-        </div>
 
 
         <?php
@@ -54,7 +51,23 @@ require "server/config.php";
         ?>
         <!-- к этой кнопеке надо прикрутить проверку на админа хз как -->
         <div class="inlineBlock">
-            
+            <table class="informer_table">
+                <thead>
+                    <tr>
+                        <th colspan="2" class="table_name"><a target="_blank" >Курсы валют ЦБ РФ</a></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="col2">
+                        <th>Валюта</th>
+                        <th>RUB</th>
+                    </tr>
+                    <?php require "server/valute.php" ?>
+                    <tr class="col-data">
+                        <td colspan="2" class="table_name"><time class="ftDateTime" datetime="2022-01-09UTC13:26">Дата <span class="ftDateTimeStr"><?php echo $date ?></span></time></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
     <!-- test -->

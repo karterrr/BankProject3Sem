@@ -22,36 +22,11 @@ require "server/config.php";
     if (!isset($_SESSION['id'])) {
         header("Location:/auth.php");
     }
-    echo $_SESSION ['name'];
     ?>
     <div class="container mt-5">
         <div style="text-align: center;">
-            <h3 class="newnews mb-5">Главная страница</h3>
         </div>
 
-
-        <?php
-
-        //print $_SESSION['root'];
-        //print $_SESSION['password'];
-        //print $_SESSION['login'];
-        //print $_SESSION['email'];
-        //print $_SESSION['id'];
-        /*
-        if(isset($_SESSION['id']))
-        {
-            
-            if($_SESSION['root']==1)
-            {
-            ?>
-                    <button type="button" class="newnews btn btn-dark mb-5" onclick="document.location='newsform.php'">Добавить новость</button>
-
-                <?php
-            }
-                
-        }?>
-        */
-        ?>
         <!-- к этой кнопеке надо прикрутить проверку на админа хз как -->
         <div class="inlineBlock">
             
