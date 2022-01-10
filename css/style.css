@@ -3,6 +3,12 @@
     margin-left: 1%;
 }
 
+.table_name_main {
+    font-weight: bold;
+    text-align: left;
+    background-color: rgb(243, 241, 241);
+}
+
 .table_name {
     font-weight: bold;
     text-align: center;
@@ -13,6 +19,33 @@
     font-size: 50px;
 }
 
+.card_table {
+    text-align: center;
+    border: 5px solid white;
+    width: 500px;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.card_table th {
+    font-weight: normal;
+    color: rgb(0, 0, 0);
+    padding: 10px 15px;
+}
+
+.card_table td {
+    color: #669;
+    padding: 5px 40px;
+    min-width: 50%;
+}
+
+
+.col2_main {
+    color: #669;
+    border-bottom: 1px solid #e8edff;
+    padding: 5px 15px;
+}
+
 .informer_table {
     text-align: center;
     border: 5px solid white;
@@ -21,13 +54,13 @@
     width: 100%;
 }
 
-th {
+.informer_table th {
     font-weight: normal;
     color: rgb(0, 0, 0);
     padding: 10px 15px;
 }
 
-td {
+.informer_table td {
     color: #669;
     border-top: 1px solid #e8edff;
     padding: 10px 15px;
@@ -42,6 +75,7 @@ td {
     border: 1px solid;
     border-collapse: collapse;
 }
+
 
 .newnews {
     margin-left: 1%;
