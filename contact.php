@@ -19,9 +19,8 @@
         <div class="row">
             <div class="col">
             <img class="mx-auto d-block" src="sys_img/VK_logo.png" width="100px">
-                <a class="text-decoration-none text-dark" href="https://vk.com/id240873722" target="_blank"><p class="mt-4 text-center">frontend developer</p></a>
-                <a class="text-decoration-none text-dark" href="https://vk.com/dio_brando_karterr" target="_blank"><p class="mt-3 text-center">backend developer 1</p></a>
-                <a class="text-decoration-none text-dark" href="https://vk.com/vroslyakov2002" target="_blank"><p class="mt-3 text-center">backend developer 2</p></a>  
+                <a class="text-decoration-none text-dark" href="https://vk.com/dio_brando_karterr" target="_blank"><p class="mt-4 text-center">frontend developer</p></a>
+                <a class="text-decoration-none text-dark" href="https://github.com/mikairyuu" target="_blank"><p class="mt-3 text-center">backend developer</p></a>
             </div>
             <div class="col text-center">
                 <img class="mx-auto d-block" src="sys_img/loc.png" width="100px">

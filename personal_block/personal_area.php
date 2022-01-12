@@ -55,9 +55,17 @@ require "../server/config.php";
                         <th>Дата</th>
                         <th>Время</th>
                     </tr>
-                    <?php require "server/valute.php" ?>
-                    <tr class="col-data">
-                        <td colspan="2" class="table_name"><time class="ftDateTime" datetime="2022-01-09UTC13:26">Дата <span class="ftDateTimeStr"><?php echo $date ?></span></time></td>
+                    <tr class="col2">
+                        <td class="amount arrow">22.05.2021</a></td>
+                        <td class="changeVal">22:05</td>
+                    </tr>
+                    <tr class="col2">
+                        <td class="amount arrow">01.06.2022</a></td>
+                        <td class="changeVal">14:27</td>
+                    </tr>
+                    <tr class="col2">
+                        <td class="amount arrow">11.01.2022</a></td>
+                        <td class="changeVal">04:05</td>
                     </tr>
                 </tbody>
             </table>
