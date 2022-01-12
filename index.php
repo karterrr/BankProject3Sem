@@ -1,7 +1,11 @@
 <?php
 session_start();
 require "server/config.php";
+
+$check = "haha";
+
 ?>
+
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -59,23 +63,7 @@ require "server/config.php";
                         <th colspan="2" class="table_name_main"><a target="_blank">МОИ КАРТЫ</a></th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td align="left">Тип карты</td>
-                        <td class="col2_main" rowspan="2">Сумма</td>
-                    </tr>
-                    <tr>
-                        <td align="left" class="col2_main">Номер карты</td>
-                    </tr>
-                    <tr>
-                        <td align="left">Тип карты</td>
-                        <td class="col2_main" rowspan="2">Сумма</td>
-                    </tr>
-                    <tr>
-                        <td align="left" class="col2_main">Номер карты</td>
-                    </tr>
-                    
-                </tbody>
+                <?php require "server/card_info.php" ?>
             </table>
             <table class="card_table">
                 <thead>
@@ -83,47 +71,15 @@ require "server/config.php";
                         <th colspan="2" class="table_name_main"><a target="_blank">МОИ СЧЕТА</a></th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td align="left">Текущий счёт</td>
-                        <td class="col2_main" rowspan="2">Сумма</td>
-                    </tr>
-                    <tr>
-                        <td align="left" class="col2_main">Номер счёта</td>
-                    </tr>
-                    <tr>
-                        <td align="left">Текущий счёт</td>
-                        <td class="col2_main" rowspan="2">Сумма</td>
-                    </tr>
-                    <tr>
-                        <td align="left" class="col2_main">Номер счёта</td>
-                    </tr>
-                    
-                </tbody>
+                <?php require "server/check_info.php" ?>
             </table>
             <table class="card_table">
                 <thead>
                     <tr>
-                        <th colspan="2" class="table_name_main"><a target="_blank">МОИ СЧЕТА</a></th>
+                        <th colspan="2" class="table_name_main"><a target="_blank">МОИ КРЕДИТЫ</a></th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td align="left">Кредит наличными</td>
-                        <td class="col2_main" rowspan="2">Сумма</td>
-                    </tr>
-                    <tr>
-                        <td align="left" class="col2_main">Номер счёта</td>
-                    </tr>
-                    <tr>
-                        <td align="left">Ипотека</td>
-                        <td class="col2_main" rowspan="2">Сумма</td>
-                    </tr>
-                    <tr>
-                        <td align="left" class="col2_main">Номер счёта</td>
-                    </tr>
-                    
-                </tbody>
+                <?php require "server/credits_info.php" ?>
             </table>
         </div>
     </div>
