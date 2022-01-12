@@ -19,29 +19,6 @@ require "../server/config.php";
     <div class="menu container mt-5 justify-content-md-center text-center">
         <?php require "pa_blocks/pa_header.php" ?>
         <div class="row mt-5">
-            <div class="form-control col first-col rounded border bg-light border-2 pa-col">
-                Сменить аватарку
-                <form enctype="multipart/form-data" class="mt-2" action="/server/set_avatar.php" method="post">
-                    <?php
-                    if ($_SESSION['img'] == '')
-                    {
-                        ?>
-                        <img src="../img/upload_def_icon.jpg" class="user-img rounded-circle img-thumbnail" width="200">
-                        <?php
-                    }
-                    else
-                    {
-                        ?>
-                        <img src="../<?php echo $_SESSION['img']; ?>" class="user-img rounded-circle img-thumbnail" width="200">
-                        <?php
-                    }
-                    ?>
-                    <input class="mt-2" type="file" name="file" required="">
-                    <div class="d-grid">
-                        <button type="submit" name="sub" class="btn btn-primary mt-2">Изменить аватарку</button>
-                    </div>
-                </form>
-            </div>
             <div class="form-control col rounded border bg-light border-2 pa-col">
                 Сменить имя
                 <form action="/server/change_name.php" method="post">

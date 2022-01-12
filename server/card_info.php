@@ -46,7 +46,7 @@ if ($responseData->success === TRUE) {
         <tbody class="card_info" onclick="window.click();">
                 <tr>
                     <td align="left">Дебетовая карта</td>
-                    <td class="col2_main" rowspan="2"><?=  $array[$i]->count ?></td>
+                    <td class="col2_main" rowspan="2"><?php echo $array[$i]->count ?></td>
                 </tr>
                 <tr>
                     <td align="left" class="col2_main"><?php echo substr($array[$i]->number, 0, 4), "****", substr($array[$i]->number, 12, 15) ?></td>
@@ -56,3 +56,4 @@ if ($responseData->success === TRUE) {
         $i = $i + 1;
     }
 }
+?>

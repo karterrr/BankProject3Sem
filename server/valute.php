@@ -35,3 +35,4 @@ while ($valute_name = current($array)) {
     //echo key($array), "\n";
     next($array);
 }
+?>

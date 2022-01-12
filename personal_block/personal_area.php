@@ -1,9 +1,10 @@
-<?php 
+<?php
 session_start();
 require "../server/config.php";
 ?>
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,6 +14,7 @@ require "../server/config.php";
 
     <title>News Today</title>
 </head>
+
 <body>
     <?php require "../blocks/header.php" ?>
 
@@ -20,69 +22,52 @@ require "../server/config.php";
         <?php require "pa_blocks/pa_header.php" ?>
         <div class=" row mt-5 rounded border bg-light border-2">
             <div class="col">
-                Аватарка
+                Логин
             </div>
             <div class="col">
                 Имя
             </div>
-            <div class="col">
-                Почта
-            </div>
-            <div class="col">
-                Статус
-            </div>
             <div class="w-100 mt-2"></div>
-            <div class="user-img-div col mb-2">
+            <div class="col mt-3 mb-4 h2">
                 <?php
-                if ($_SESSION['img'] == '')
-                {
-                ?>
-                <img src="../img/upload_def_icon.jpg" class="user-img rounded-circle img-thumbnail">
-                <?php
-                }
-                else
-                {
-                ?>
-                    <img src="../<?php echo $_SESSION['img']; ?>" class="user-img rounded-circle img-thumbnail">
-                <?php
-                }
-                ?>
-                <!-- Тут отображается ава пользователя -->
-            </div>
-            <div class="col mt-5 h2">
-                <?php
-                   print $_SESSION['login']
+                print $_SESSION['login']
                 ?>
                 <!-- Тут отображается Никнейм -->
             </div>
-            <div class="col mt-5 h2">
+            <div class="col mt-3 mb-4 h2">
                 <?php
-                   print $_SESSION['name']
+                print $_SESSION['name']
                 ?>
                 <!-- Тут отображается логин -->
             </div>
-            <div class="col mt-5 h2">
-                <?php
-                    if ($_SESSION['root'] == 0)
-                    {
-                        print '<h3 style="color:#6c757d";>Пользователь</h3>';
-                    }
-                    elseif ($_SESSION['root'] == 1)
-                    {
-                        print '<h3 style="color:#0dcaf0";>Админ</h3>';
-                    }
-                    if ($_SESSION['root'] == 2)
-                    {
-                        print '<h3 style="color:#dc3545";>Забен</h3>';
-                    }
-                ?>
-                <!-- Тут отображается статус -->
-            </div>
         </div>
     </div>
-    
+    <div class="container mt-5">
+        <div class="inlineBlock">
+            <table class="informer_table">
+                <thead>
+                    <tr>
+                        <th colspan="2" class="table_name"><a target="_blank">Список последних посещений</a></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="col2">
+                        <th>Дата</th>
+                        <th>Время</th>
+                    </tr>
+                    <?php require "server/valute.php" ?>
+                    <tr class="col-data">
+                        <td colspan="2" class="table_name"><time class="ftDateTime" datetime="2022-01-09UTC13:26">Дата <span class="ftDateTimeStr"><?php echo $date ?></span></time></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
 
     <?php require "../blocks/footer-min.php" ?>
-    <?php require "pa_popups/support_popup.php"?>
+    <?php require "pa_popups/support_popup.php" ?>
 </body>
+
 </html>
