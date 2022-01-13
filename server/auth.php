@@ -30,7 +30,7 @@ if(!isset($_SESSION['id']))
         $response = file_get_contents( $url, FALSE, $options);
         // Check for errors
         if($response === FALSE){
-            print "блять";
+            print "ошибка";
         }
 
         //var_dump($response);
@@ -63,7 +63,7 @@ if(!isset($_SESSION['id']))
             $responsegetuser = file_get_contents( $url, FALSE, $optionsgetuser);
             // Check for errors
             if($responsegetuser === FALSE){
-                print "блять";
+                print "ошибка";
             }
 
             $responseDatagetuser = json_decode($responsegetuser);

@@ -23,6 +23,7 @@
                 else
                 {
                     ?>
+                    <a class="me-3 py-2 text-dark text-decoration-none" href="/bankomats.php">Платежи</a>
                     <a class="me-3 py-2 text-dark text-decoration-none" href="/bankomats.php">Банкоматы</a>
                     <a class="me-3 py-2 text-dark text-decoration-none" href="/valute.php">Котировки</a>
                     <a class="me-3 py-2 text-dark text-decoration-none" href="/personal_block/personal_area.php">Личный кабинет</a>

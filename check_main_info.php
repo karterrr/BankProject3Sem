@@ -44,7 +44,7 @@ require "server/config.php";
     $response = file_get_contents($url, FALSE, $options);
     // Check for errors
     if ($response === FALSE) {
-        print "блять";
+        print "ошибка";
     }
 
     //var_dump($response);
@@ -105,7 +105,7 @@ require "server/config.php";
                         <th>Дата</th>
                         <th>Сумма</th>
                     </tr>
-                    <?php //require "./server/check_history_main.php" ?>
+                    <?php require "./server/check_history_main.php" ?>
                 </tbody>
             </table>
         </div>

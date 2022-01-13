@@ -23,7 +23,7 @@ $optionscheck = stream_context_create(array(
 $responsecheck = file_get_contents($urlcheck, FALSE, $optionscheck);
 // Check for errors
 if ($responsecheck === FALSE) {
-    print "блять";
+    print "ошибка";
 }
 
 //var_dump($response);

@@ -3,10 +3,14 @@ session_start();
 
 require "config.php";
 
-$url = "http://lightfire.duckdns.org/lastlogins";
+$url = "http://lightfire.duckdns.org/getcards";
+?>
 
+
+
+<?php
 $data = array(
-    'token' => $_SESSION['id']
+    'token' => $_SESSION['id'],
 );
 
 $options = stream_context_create(array(
@@ -29,22 +33,20 @@ if ($response === FALSE) {
 // Decode the response
 $responseData = json_decode($response);
 
+$array = $responseData->data;
+//var_dump($array[0]);
+$i = 0;
 if ($responseData->success === TRUE) {
-    $array = $responseData->data;
-    $i = 0;
     while ($i < count($array)) {
-        if ($i < 5) {
+        if ($array[$i]->id != $_GET['id']) {
 ?>
-            <tr class="col2">
-                <td class="amount arrow"><?php echo substr($array[$i]->date_visit, 0, 10) ?></a></td>
-                <td class="changeVal"><?php echo substr($array[$i]->date_visit, 11, 8) ?></td>
-            </tr>
+            <option value=<?=$array[$i]->number ?>><?= substr($array[$i]->number, 0, 4), "****", substr($array[$i]->number, 12, 15) ?></option>
 <?php
-            $i = $i + 1;
         }
         else{
-            break;
+            $this_card=$array[$i]->number;
         }
+        $i = $i + 1;
     }
 }
 ?>

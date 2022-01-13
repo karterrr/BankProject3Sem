@@ -44,7 +44,7 @@ require "server/config.php";
     $response = file_get_contents($url, FALSE, $options);
     // Check for errors
     if ($response === FALSE) {
-        print "блять";
+        print "ошибка";
     }
 
     //var_dump($response);
@@ -90,8 +90,20 @@ require "server/config.php";
         } else {
         ?>
             <div class="d-grid gap-2 d-md-flex justify-content-md-center mb-5">
-                <button type="button" class="btn btn-danger me-md-5">Пополнить</button>
-                <button type="button" class="btn btn-success">Перевести</button>
+                <button type="button" class="btn btn-danger me-md-5" onclick="window.click_refill(<?php echo $array[$i]->id ?>);">Пополнить</button>
+                <script>
+                    function click_refill(c) {
+                        console.log(c);
+                        location.href = "./refill.php?id=" + c;
+                    }
+                </script>
+                <button type="button" class="btn btn-success" onclick="window.click_transit(<?php echo $array[$i]->id ?>);">Перевести</button>
+                <script>
+                    function click_transit(d) {
+                        console.log(d);
+                        location.href = "./transit.php?id=" + d;
+                    }
+                </script>
             </div>
         <?php
         }

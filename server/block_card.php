@@ -47,7 +47,7 @@ if (isset($_SESSION['id'])) {
             var_dump($response);
             // Check for errors
             if ($response === FALSE) {
-                print "блять";
+                print "ошибка";
             }
 
             //var_dump($response);

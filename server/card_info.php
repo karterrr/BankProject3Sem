@@ -25,7 +25,7 @@ $options = stream_context_create(array(
 $response = file_get_contents($url, FALSE, $options);
 // Check for errors
 if ($response === FALSE) {
-    print "блять";
+    print "ошибка";
 }
 
 //var_dump($response);

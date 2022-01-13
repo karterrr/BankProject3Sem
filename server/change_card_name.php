@@ -27,7 +27,7 @@ if (isset($_SESSION['id'])) {
         $new_name = trim($new_name);
 
 
-        $url = "http://lightfire.duckdns.org/edite/instrument/name";
+        $url = "http://lightfire.duckdns.org/edit/instrument/name";
         
         $data = array(
             'name' => $new_name,
@@ -48,7 +48,7 @@ if (isset($_SESSION['id'])) {
         $response = file_get_contents($url, FALSE, $options);
         // Check for errors
         if ($response === FALSE) {
-            print "блять";
+            print "ошибка";
         }
     
         //var_dump($response);
