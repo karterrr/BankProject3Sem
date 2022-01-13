@@ -29,7 +29,14 @@ require "server/config.php";
 
         <!-- к этой кнопеке надо прикрутить проверку на админа хз как -->
         <div class="inlineBlock">
-            
+            <table class="card_table">
+                <thead>
+                    <tr>
+                        <th colspan="2" class="table_name"><a target="_blank">Список банкоматов</a></th>
+                    </tr>
+                </thead>
+                <?php require "./server/bankomats.php" ?>
+            </table>
         </div>
     </div>
     <!-- test -->
