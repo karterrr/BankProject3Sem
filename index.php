@@ -63,7 +63,7 @@ $check = "haha";
                         <th colspan="2" class="table_name_main"><a target="_blank">МОИ КАРТЫ</a></th>
                     </tr>
                 </thead>
-                <?php require "server/card_info.php" ?>
+                <?php require "./server/card_info.php" ?>
             </table>
             <table class="card_table">
                 <thead>
@@ -71,7 +71,7 @@ $check = "haha";
                         <th colspan="2" class="table_name_main"><a target="_blank">МОИ СЧЕТА</a></th>
                     </tr>
                 </thead>
-                <?php require "server/check_info.php" ?>
+                <?php require "./server/check_info.php" ?>
             </table>
             <table class="card_table">
                 <thead>
@@ -79,7 +79,7 @@ $check = "haha";
                         <th colspan="2" class="table_name_main"><a target="_blank">МОИ КРЕДИТЫ</a></th>
                     </tr>
                 </thead>
-                <?php require "server/credits_info.php" ?>
+                <?php require "./server/credits_info.php" ?>
             </table>
         </div>
     </div>

@@ -12,7 +12,7 @@ $url = "http://lightfire.duckdns.org/getcredits";
   }
 </script>
 
-<?
+<?php
 $data = array(
     'token' => $_SESSION['id'],
 );
@@ -41,7 +41,7 @@ $array = $responseData->data;
 //var_dump($array[0]);
 $i = 0;
 if ($responseData->success === TRUE) {
-    while ($lala = $array[$i]) {
+    while ($i<count($array)) {
         ?>
         <tbody class="card_info" onclick="window.click();">
                 <tr>
