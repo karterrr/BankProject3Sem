@@ -14,25 +14,21 @@ $response = file_get_contents($url);
 //var_dump($response);
 
 // Decode the response
-$responseData = json_decode($response);
+$responseData = json_decode($response)->ValCurs;
 
 // Print the date from the response
-$date = $responseData->date;
+$date = $responseData->{"@Date"};
 
-$array = $responseData->rates;
+$array = $responseData->Valute;
 
-while ($valute_name = current($array)) {
-    $real_valute = 1 / current($array);
-    //print_r(round($real_valute,4));
-    if (file_exists('./flags_img/' . key($array) . '.png')) {
+foreach ($array as $cur ) {
+    if (file_exists('./flags_img/' . $cur->CharCode . '.png')) {
 ?>
         <tr class="col2" data-symbol="Доллар США" data-id="2" data-precision="">
-            <td class="amount arrow"><span class="style2ImgWrap"><img src="./flags_img/<?php echo key($array) ?>.png" with="16" height="16" alt=""></span><a style="width: 27px;"><?php echo key($array); ?></a></td>
-            <td class="changeVal" data-column="todayCourse"><?php print_r(round($real_valute, 4)); ?></td>
+            <td class="amount arrow"><span class="style2ImgWrap"><img src="./flags_img/<?php echo $cur->CharCode ?>.png" with="16" height="16" alt=""></span><a style="width: 27px;"><?php echo $cur->CharCode; ?></a></td>
+            <td class="changeVal" data-column="todayCourse"><?php echo $cur->Value; ?></td>
         </tr>
 <?php
     }
-    //echo key($array), "\n";
-    next($array);
 }
 ?>
