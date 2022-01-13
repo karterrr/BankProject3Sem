@@ -23,6 +23,18 @@
     font-size: 50px;
 }
 
+.card_border{
+    width: 80%;
+    align-self: center;
+    margin:0 auto;
+}
+
+.card_main_info h2{
+    padding-top: 90px;
+    padding-left: 20px;
+    margin-top: 50px;
+}
+
 .card_info:hover{
     background: #e8edff;
 }
@@ -47,13 +59,6 @@
     padding: 5px 40px;
     min-width: 50%;
     position: relative;
-}
-
-
-.col2_main {
-    color: #669;
-    border-bottom: 1px solid #e8edff;
-    padding: 5px 15px;
 }
 
 .informer_table {
@@ -84,6 +89,36 @@
     padding: 3px;
     border: 1px solid;
     border-collapse: collapse;
+}
+
+.col2 td{
+    min-width: 50%;
+}
+
+.col2_main {
+    color: #669;
+    border-bottom: 1px solid #e8edff;
+    padding: 5px 15px;
+}
+
+.col3:hover td {
+    background: #e8edff;
+}
+
+.col3 {
+    padding: 3px;
+    border: 1px solid;
+    border-collapse: collapse;
+}
+
+.col3 td{
+    min-width: 33%;
+}
+
+.col3_main {
+    color: #669;
+    border-bottom: 1px solid #e8edff;
+    padding: 5px 15px;
 }
 
 

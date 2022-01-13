@@ -49,7 +49,7 @@ if ($responseData->success === TRUE) {
                     <td class="col2_main" rowspan="2"><?=  $array[$i]->count ?></td>
                 </tr>
                 <tr>
-                    <td align="left" class="col2_main"><?= $array[$i]->payment_date ?></td>
+                    <td align="left" class="col2_main"><?php echo substr($array[$i]->payment_date, 0, 10) ?></td>
                 </tr>
             </tbody>
         <?php

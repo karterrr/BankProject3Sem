@@ -8,10 +8,11 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
     <script src="../js/copy_text.js"></script>
-    <title>Gachi Bank</title>
+    <title>DruzhBank</title>
 </head>
+<?php require "blocks/header.php" ?>
+
 <body>
-    <?php require "blocks/header.php" ?>
 
     <div class="container md-5">
         <h2 class="h1-responsive font-weight-bold text-center my-4">Свяжитесь с нами!</h2>

@@ -31,16 +31,20 @@ $responseData = json_decode($response);
 
 if ($responseData->success === TRUE) {
     $array = $responseData->data;
-    $i = count($array)-1;
-    while($i>-1){
-
+    $i = 0;
+    while ($i < count($array)) {
+        if ($i < 5) {
 ?>
             <tr class="col2">
-                <td class="amount arrow"><?php echo substr($array[$i]->date_visit,0,9) ?></a></td>
-                <td class="changeVal"><?php echo substr($array[$i]->date_visit,11,18) ?></td>
+                <td class="amount arrow"><?php echo substr($array[$i]->date_visit, 0, 10) ?></a></td>
+                <td class="changeVal"><?php echo substr($array[$i]->date_visit, 11, 8) ?></td>
             </tr>
 <?php
-    $i=$i-1;
-}
+            $i = $i + 1;
+        }
+        else{
+            break;
+        }
+    }
 }
 ?>

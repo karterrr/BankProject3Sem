@@ -15,15 +15,6 @@ if(isset($_SESSION['id']))
     <div class="col">
         <a class="text-dark text-decoration-none" href="account_set.php">Настройки аккаунта</a>
     </div>
-    <?php
-    if($_SESSION['root'] == 1)
-    {?>
-    <div class="col">
-        <a class="text-dark text-decoration-none" href="users_info.php">Список пользователей</a>
-    </div>
-    <?php
-    }
-    ?>
     <div class="col">
         <a class="text-dark text-decoration-none" href="#popup9">Поддержка</a>
     </div>
