@@ -12,7 +12,7 @@ require "../server/config.php";
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
 
-    <title>News Today</title>
+    <title>DruzhBank</title>
 </head>
 
 <body>
@@ -55,18 +55,7 @@ require "../server/config.php";
                         <th>Дата</th>
                         <th>Время</th>
                     </tr>
-                    <tr class="col2">
-                        <td class="amount arrow">22.05.2021</a></td>
-                        <td class="changeVal">22:05</td>
-                    </tr>
-                    <tr class="col2">
-                        <td class="amount arrow">01.06.2022</a></td>
-                        <td class="changeVal">14:27</td>
-                    </tr>
-                    <tr class="col2">
-                        <td class="amount arrow">11.01.2022</a></td>
-                        <td class="changeVal">04:05</td>
-                    </tr>
+                    <?php require "../server/lastlogins_info.php" ?>
                 </tbody>
             </table>
         </div>

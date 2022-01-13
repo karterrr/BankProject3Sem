@@ -27,7 +27,7 @@
                 <a class="text-decoration-none text-dark" href="https://goo.gl/maps/cENSkVfmjE8VdcmJA" target="_blank"><p class="mt-1 text-center" onclick="copyElementText('myInp')">ул. Шепеткова, д. 14, Владивосток, Приморский край, 690013</p></a>            </div>
             <div class="col text-center">
                 <img class="mx-auto d-block" src="sys_img/mail.png" width="100px">
-                <p id="myInp" class="mt-4 text-center" onclick="copyElementText('myInp')">onlinesupport@info.newstoday.com</p>
+                <p id="myInp" class="mt-4 text-center" onclick="copyElementText('myInp')">onlinesupport@info.DruzhBank.com</p>
                 <h6 class="h6 text-secondary" style="font-size: 10px; margin-top: -3%!important;">Нажмите, чтобы скопировать</h6>
             </div>
             

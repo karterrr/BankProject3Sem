@@ -11,7 +11,7 @@ require "../server/config.php";
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
     <script src="../js/show_pass.js"></script>
-    <title>News Today</title>
+    <title>DruzhBank</title>
 </head>
 <body>
     <?php require "../blocks/header.php" ?>
