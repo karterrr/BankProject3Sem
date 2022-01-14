@@ -30,42 +30,42 @@ require "server/config.php";
             <h3 class="newnews mb-5">Платежи</h3>
         </div>
 
-            <input type="radio" class="btn-check" name="radio" id="check_fill" autocomplete="off" checked>
-            <label class="btn btn-secondary" for="check_fill">Платежи</label>
-            <input type="radio" class="btn-check" name="radio" id="card_fill" autocomplete="off">
-            <label class="btn btn-secondary" for="card_fill">Шаблоны</label>
+        <input type="radio" class="btn-check" name="radio" id="check_fill" autocomplete="off" checked>
+        <label class="btn btn-secondary" for="check_fill">Платежи</label>
+        <input type="radio" class="btn-check" name="radio" id="card_fill" autocomplete="off">
+        <label class="btn btn-secondary" for="card_fill">Шаблоны</label>
 
 
-            <div class="check_fill mt-3">
-                <table name="check_fill" class="informer_table">
-                    <thead>
-                        <tr>
-                            <th colspan="2" class="table_name"><a target="_blank">Список платежей</a></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php require "./server/pay_info.php" ?>
-                    </tbody>
-                </table>
-            </div>
+        <div class="check_fill mt-3">
+            <table name="check_fill" class="informer_table">
+                <thead>
+                    <tr>
+                        <th colspan="2" class="table_name"><a target="_blank">Список платежей</a></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php require "./server/pay_info.php" ?>
+                </tbody>
+            </table>
+        </div>
 
-            <div class="card_fill mt-3">
-                <table name="card_fill" class="informer_table">
-                    <thead>
-                        <tr>
-                            <th colspan="2" class="table_name"><a target="_blank">Список шаблонов</a></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="col2">
-                            <th>Дата</th>
-                            <th>Время</th>
-                        </tr>
-                        <?php //require "../server/lastlogins_info.php" 
-                        ?>
-                    </tbody>
-                </table>
-            </div>
+        <div class="card_fill mt-3">
+            <table class="informer_table">
+                <thead>
+                    <tr>
+                        <th colspan="3" class="table_name"><a target="_blank">История по карте</a></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="col3">
+                        <th>Тип операции</th>
+                        <th>Дата</th>
+                        <th>Сумма</th>
+                    </tr>
+                    <?php require "./server/card_history_main.php" ?>
+                </tbody>
+            </table>
+        </div>
     </div>
     </div>
     </div>

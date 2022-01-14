@@ -39,13 +39,13 @@ if ($responseDatacheck->success === TRUE) {
 ?>
             <tr class="col3">
                 <?php
-                if($arraycheck[$j]->instrument_type==0)
+                if($arraycheck[$j]->type==0)
                 {
                 ?>
                 <td>Перевод на карту</td>
                 <?php
                 }
-                elseif($arraycheck[$j]->instrument_type==1)
+                elseif($arraycheck[$j]->type==1)
                 {
                 ?>
                 <td>Перевод на счёт</td>
