@@ -17,11 +17,13 @@ if (isset($_SESSION['id'])) {
         //print $email." ".$password;
         if (empty($_POST['bank_number']) or empty($_POST['card_pay'])) //если пользователь не ввел логин, то выдаем ошибку и останавливаем скрипт
         {
-            header("Location:/pay.php?id=" . $_POST['id']);
+            header("Location:/pay_main_info.php?id=" . $_POST['id']);
+            exit();
         }
 
         if ($_SESSION['password'] != $_POST['password']) {
-            header("Location:/pay.php?id=" . $_POST['id']);
+            header("Location:/pay_main_info.php?id=" . $_POST['id']);
+            exit();
         }
 
 
