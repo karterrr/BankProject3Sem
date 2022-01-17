@@ -1,6 +1,7 @@
 <?php
 session_start();
 require "server/config.php";
+require "server/utils.php";
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -22,35 +23,11 @@ require "server/config.php";
     if (!isset($_SESSION['id'])) {
         header("Location:/auth.php");
     }
-    $url = "http://lightfire.duckdns.org/getcheck";
-    ?>
-
-
-
-    <?php
     $data = array(
         'token' => $_SESSION['id'],
     );
 
-    $options = stream_context_create(array(
-        'http' => array(
-            'method'  => 'POST',
-            'content' => json_encode($data),
-            'header' =>  "Content-Type: application/json\r\n",
-        )
-    ));
-
-
-    $response = file_get_contents($url, FALSE, $options);
-    // Check for errors
-    if ($response === FALSE) {
-        print "ошибка";
-    }
-
-    //var_dump($response);
-
-    // Decode the response
-    $responseData = json_decode($response);
+    $responseData = api_call($api_url."/getcheck", "POST", $data);
 
     $array = $responseData->data;
     //var_dump($array[0]);

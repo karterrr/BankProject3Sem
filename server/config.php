@@ -1,9 +1,11 @@
 <?php
 
-//вместо localhost нужно будет подставить IP сервера, если будем его подключать, он будет дан самим хостером
-//далее 'имя пользователя дб' 'пароль' 'название дб'
-//$db=new mysqli('localhost:3306', 'root', 'root', 'list_of_users');
+require "envconfig.php";
 
+$site_url = "http:localhost";
 
-$site_url="http:localhost";
-
+if($APP_MODE === MODE::DEBUG){
+    $api_url = "http://lightfire.duckdns.org";
+}else if ($APP_MODE === MODE::RELEASE){
+    $api_url = "http://localhost:5000";
+}

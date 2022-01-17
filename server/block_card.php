@@ -3,6 +3,7 @@
 session_start();
 
 require "config.php";
+require "utils.php";
 
 //include 'auth.php'
 
@@ -27,33 +28,12 @@ if (isset($_SESSION['id'])) {
         $password = trim($password);
 
         if ($password == $_SESSION['password']) {
-            $url = "http://lightfire.duckdns.org/block";
-
             $data = array(
                 'number' => $_POST['number'],
                 'token' => $_SESSION['id']
             );
-            var_dump($data);
-            $options = stream_context_create(array(
-                'http' => array(
-                    'method'  => 'POST',
-                    'content' => json_encode($data),
-                    'header' =>  "Content-Type: application/json\r\n",
-                )
-            ));
-
-
-            $response = file_get_contents($url, FALSE, $options);
-            var_dump($response);
-            // Check for errors
-            if ($response === FALSE) {
-                print "ошибка";
-            }
-
-            //var_dump($response);
-
-            // Decode the response
-            $responseData = json_decode($response);
+           
+            $responseData = api_call($api_url."/block", "POST", $data);
 
             if ($responseData == TRUE) {
                 header("Location:/card_main_info.php?id=".$_POST['id']);

@@ -3,6 +3,7 @@
 session_start();
 
 require "config.php";
+require "utils.php";
 
 if (isset($_SESSION['id'])) {
     if (isset($_POST['sub'])) {
@@ -47,10 +48,7 @@ if (isset($_SESSION['id'])) {
         } else {
             $dest_number = $_POST['bank_number'];
         }
-
-        $url = "http://lightfire.duckdns.org/refill";
-
-
+        
         $data = array(
             'token' => $_SESSION['id'],
             'source' => $_POST['source_number'],
@@ -58,28 +56,7 @@ if (isset($_SESSION['id'])) {
             'sum' => (int)$_POST['count'],
             'payType' => 0
         );
-
-        var_dump($data);
-
-        $options = stream_context_create(array(
-            'http' => array(
-                'method'  => 'POST',
-                'content' => json_encode($data),
-                'header' =>  "Content-Type: application/json\r\n",
-            )
-        ));
-
-        $response = file_get_contents($url, FALSE, $options);
-        // Check for errors
-        var_dump($response);
-        if ($response == FALSE) {
-            print "ошибка";
-        }
-
-        //var_dump($response);
-
-        // Decode the response
-        $responseData = json_decode($response);
+        $responseData = api_call($api_url."/refill", "POST", $data);
 
         //var_dump($responseData);
         if ($responseData == TRUE) {

@@ -2,19 +2,9 @@
 session_start();
 
 require "config.php";
+require "utils.php";
 
-$url = "http://lightfire.duckdns.org/bankomats";
-
-
-
-
-$response = file_get_contents($url);
-// Check for errors
-
-//var_dump($response);
-
-// Decode the response
-$responseData = json_decode($response);
+$responseData = api_call($api_url."/bankomats", "GET", "");
 
 // Print the date from the response
 $date = $responseData->date;

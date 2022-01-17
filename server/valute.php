@@ -2,19 +2,9 @@
 session_start();
 
 require "config.php";
+require "utils.php";
 
-$url = "http://lightfire.duckdns.org/valute";
-
-
-
-
-$response = file_get_contents($url);
-// Check for errors
-
-//var_dump($response);
-
-// Decode the response
-$responseData = json_decode($response)->ValCurs;
+$responseData = api_call($api_url."/valute", "GET", "")->ValCurs;
 
 // Print the date from the response
 $date = $responseData->{"@Date"};

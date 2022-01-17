@@ -3,6 +3,7 @@
 session_start();
 
 require "config.php";
+require "utils.php";
 
 if(isset($_SESSION['id']))
 {
@@ -47,36 +48,13 @@ if(isset($_SESSION['id']))
         //$password=$_SESSION['password'];
         //$login=$_SESSION['login'];
 
-
-        $url = "http://lightfire.duckdns.org/editepassword";
-
-
         $data = array(
             'old_password' => $cur_password,
             'new_password' => $new_password,
             'token' => $_SESSION['id']
         );
 
-       // var_dump($data);
-
-        $options = stream_context_create(array(
-            'http' => array(
-                'method'  => 'PUT',
-                'content' => json_encode( $data ),
-                'header'=>  "Content-Type: application/json\r\n",
-            )
-        ));
-
-        $response = file_get_contents( $url, FALSE, $options);
-        // Check for errors
-        if($response === FALSE){
-            print "ошибка";
-        }
- 
-         //var_dump($response);
- 
-         // Decode the response
-        $responseData = json_decode($response);
+        $responseData = api_call($api_url."/editepassword", "PUT", $data);
 
         //var_dump($responseData);
         if($responseData -> success ===TRUE)

@@ -2,8 +2,7 @@
 session_start();
 
 require "config.php";
-
-$urlcheck = "http://lightfire.duckdns.org/history/card";
+require "utils.php";
 
 $datacheck = array(
     'number' => $array[$i]->number,
@@ -11,25 +10,7 @@ $datacheck = array(
     'operationCount' => 10
 );
 
-$optionscheck = stream_context_create(array(
-    'http' => array(
-        'method'  => 'POST',
-        'content' => json_encode($datacheck),
-        'header' =>  "Content-Type: application/json\r\n",
-    )
-));
-
-
-$responsecheck = file_get_contents($urlcheck, FALSE, $optionscheck);
-// Check for errors
-if ($responsecheck === FALSE) {
-    print "ошибка";
-}
-
-//var_dump($response);
-
-// Decode the response
-$responseDatacheck = json_decode($responsecheck);
+$responseDatacheck = api_call($api_url."/history/card", "POST", $datacheck);
 
 if ($responseDatacheck->success === TRUE) {
     $arraycheck = $responseDatacheck->data;

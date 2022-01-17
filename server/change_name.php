@@ -3,6 +3,7 @@
 session_start();
 
 require "config.php";
+require "utils.php";
 
 //include 'auth.php'
 
@@ -38,31 +39,14 @@ if (isset($_SESSION['id'])) {
         // $token = $_SESSION['id'] -> data -> token;
 
         // print $token;
-
-        $url = "http://lightfire.duckdns.org/editeusername";
-
-        //  $_SESSION['login'] = $new_login;
-
+        
         $data = array(
             'name' => $new_name,
             'token' => $_SESSION['id']
 
         );
 
-
-        $options = stream_context_create(array(
-            'http' => array(
-                'method'  => 'PUT',
-                'content' => json_encode($data),
-                'header' =>  "Content-Type: application/json\r\n",
-            )
-        ));
-
-        $response = file_get_contents($url, FALSE, $options);
-        // Check for errors
-
-        // Decode the response
-        $responseData = json_decode($response);
+        $responseData = api_call($api_url."/editeusername", "PUT", $data);
 
         //var_dump($response);
         // Print the date from the response

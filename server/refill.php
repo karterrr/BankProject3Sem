@@ -3,6 +3,7 @@
 session_start();
 
 require "config.php";
+require "utils.php";
 
 if(isset($_SESSION['id']))
 {
@@ -25,13 +26,6 @@ if(isset($_SESSION['id']))
         {
             header("Location:/refill.php?id=".$_POST['id']);
         }
-
-
-
-        //$password=$_SESSION['password'];
-        //$login=$_SESSION['login'];
-
-
         
 
         if ($_POST['card_fill'])
@@ -45,11 +39,11 @@ if(isset($_SESSION['id']))
 
         if (strlen($source)==16)
         {
-            $url = "http://lightfire.duckdns.org/refill";
+            $url = $api_url."/refill";
         }
         else
         {
-            $url = "http://lightfire.duckdns.org/pay";
+            $url = $api_url."/pay";
         }
 
         $data = array(
@@ -60,27 +54,7 @@ if(isset($_SESSION['id']))
             'payType' => 0
         );
 
-        var_dump($data);
-
-        $options = stream_context_create(array(
-            'http' => array(
-                'method'  => 'POST',
-                'content' => json_encode( $data ),
-                'header'=>  "Content-Type: application/json\r\n",
-            )
-        ));
-
-        $response = file_get_contents( $url, FALSE, $options);
-        // Check for errors
-        var_dump($response);
-        if($response == FALSE){
-            print "ошибка";
-        }
- 
-         //var_dump($response);
- 
-         // Decode the response
-        $responseData = json_decode($response);
+        $responseData = api_call($url, "POST", $data);
 
         //var_dump($responseData);
         if($responseData==TRUE)

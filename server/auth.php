@@ -2,6 +2,7 @@
 session_start();
 
 require "config.php";
+require "utils.php";
 
 if(!isset($_SESSION['id']))
 {
@@ -9,34 +10,12 @@ if(!isset($_SESSION['id']))
     {
         $login=$_POST['login'];
         $password=$_POST['password'];
-
-        
-        $url = "http://lightfire.duckdns.org/login";
         
         $data = array(
             'login' => $login,
             'password' => $password
         );
-
-        $options = stream_context_create(array(
-            'http' => array(
-                'method'  => 'POST',
-                'content' => json_encode( $data ),
-                'header'=>  "Content-Type: application/json\r\n",
-            )
-        ));
-
-
-        $response = file_get_contents( $url, FALSE, $options);
-        // Check for errors
-        if($response === FALSE){
-            print "ошибка";
-        }
-
-        //var_dump($response);
-
-        // Decode the response
-        $responseData = json_decode($response);
+        $responseData = api_call($api_url."/login", "POST", $data);
 
         // Print the date from the response
         if($responseData -> success ===TRUE)
