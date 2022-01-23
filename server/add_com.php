@@ -5,7 +5,7 @@
   ini_set( 'upload_max_size' , '12M' );
   ini_set( 'post_max_size', '12M');
   ini_set( 'max_execution_time', '150' );
-  require "config.php";
+  require_once "config.php";
   global $db;
   $id_c=$_POST["id_c"];
   $full_text=$_POST["message"];

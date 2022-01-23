@@ -2,7 +2,7 @@
 
 session_start();
 
-require "config.php";
+require_once "config.php";
 
 //include 'auth.php'
 
@@ -67,5 +67,5 @@ if (isset($_SESSION['id'])) {
     header("Location:/index.php");
 }
 
-require "personal_block/pa_popups/same_user_name_popup.php";
-require "personal_block/perpa_popups/success_name_change_popup.php";
+require_once "personal_block/pa_popups/same_user_name_popup.php";
+require_once "personal_block/perpa_popups/success_name_change_popup.php";

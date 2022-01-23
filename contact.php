@@ -10,7 +10,7 @@
     <script src="../js/copy_text.js"></script>
     <title>DruzhBank</title>
 </head>
-<?php require "blocks/header.php" ?>
+<?php require_once "blocks/header.php" ?>
 
 <body>
 
@@ -35,6 +35,6 @@
         </div>
     </div>
 
-    <?php require "blocks/footer-min.php" ?>
+    <?php require_once "blocks/footer-min.php" ?>
 </body>
 </html>

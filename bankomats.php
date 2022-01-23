@@ -1,6 +1,6 @@
 <?php
 session_start();
-require "server/config.php";
+require_once "server/config.php";
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -14,7 +14,7 @@ require "server/config.php";
     <link rel="icon" href="/sys_img/logo.png" type="image/x-icon">
     <title>DruzhBank</title>
 </head>
-<?php require "blocks/header.php" ?>
+<?php require_once "blocks/header.php" ?>
 
 <body>
 
@@ -35,12 +35,12 @@ require "server/config.php";
                         <th colspan="2" class="table_name"><a target="_blank">Список банкоматов</a></th>
                     </tr>
                 </thead>
-                <?php require "./server/bankomats.php" ?>
+                <?php require_once "./server/bankomats.php" ?>
             </table>
         </div>
     </div>
     <!-- test -->
-    <?php require "blocks/footer.php" ?>
+    <?php require_once "blocks/footer.php" ?>
 </body>
 
 </html>

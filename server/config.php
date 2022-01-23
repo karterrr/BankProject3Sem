@@ -1,6 +1,6 @@
 <?php
 
-require "envconfig.php";
+require_once "envconfig.php";
 
 $site_url = "http:localhost";
 

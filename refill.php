@@ -1,6 +1,6 @@
 <?php
 session_start();
-require "server/config.php";
+require_once "server/config.php";
 
 ?>
 
@@ -16,7 +16,7 @@ require "server/config.php";
     <link rel="icon" href="/sys_img/logo.png" type="image/x-icon">
     <title>DruzhBank</title>
 </head>
-<?php require "blocks/header.php" ?>
+<?php require_once "blocks/header.php" ?>
 
 <body>
     
@@ -43,7 +43,7 @@ require "server/config.php";
                 <div class="input-group">
                     <select name="check_fill" class="form-select" aria-label="Default select example">
                         <option value="0" selected>Выбор счёта</option>
-                        <?php require "./server/refill_check.php" ?>
+                        <?php require_once "./server/refill_check.php" ?>
                     </select>
                 </div>
             </div>
@@ -52,7 +52,7 @@ require "server/config.php";
                 <div class="input-group">
                     <select name="card_fill" class="form-select" aria-label="Default select example">
                         <option value="0" selected>Выбор карты</option>
-                        <?php require "./server/refill_card.php" ?>
+                        <?php require_once "./server/refill_card.php" ?>
                     </select>
                 </div>
             </div>
@@ -79,7 +79,7 @@ require "server/config.php";
     </div>
     </div>
     <!-- test -->
-    <?php require "blocks/footer.php" ?>
+    <?php require_once "blocks/footer.php" ?>
 </body>
 
 </html>

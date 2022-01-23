@@ -2,8 +2,8 @@
 
 session_start();
 
-require "config.php";
-require "utils.php";
+require_once "config.php";
+require_once "utils.php";
 
 if (isset($_SESSION['id'])) {
     if (isset($_POST['sub'])) {

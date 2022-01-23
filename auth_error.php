@@ -3,4 +3,4 @@
         Неверный логин или пароль, повторите попытку снова
     </div>
 </div>
-<?php require "auth.php"?>
+<?php require_once "auth.php"?>

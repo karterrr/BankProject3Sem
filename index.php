@@ -1,6 +1,6 @@
 <?php
 session_start();
-require "server/config.php";
+require_once "server/config.php";
 
 ?>
 
@@ -16,7 +16,7 @@ require "server/config.php";
     <link rel="icon" href="/sys_img/logo.png" type="image/x-icon">
     <title>DruzhBank</title>
 </head>
-<?php require "blocks/header.php" ?>
+<?php require_once "blocks/header.php" ?>
 <body>
 
     <?php
@@ -60,7 +60,7 @@ require "server/config.php";
                         <th colspan="2" class="table_name_main"><a target="_blank">МОИ КАРТЫ</a></th>
                     </tr>
                 </thead>
-                <?php require "./server/card_info.php" ?>
+                <?php require_once "./server/card_info.php" ?>
             </table>
             <table class="card_table">
                 <thead>
@@ -68,7 +68,7 @@ require "server/config.php";
                         <th colspan="2" class="table_name_main"><a target="_blank">МОИ СЧЕТА</a></th>
                     </tr>
                 </thead>
-                <?php require "./server/check_info.php" ?>
+                <?php require_once "./server/check_info.php" ?>
             </table>
             <table class="card_table">
                 <thead>
@@ -76,12 +76,12 @@ require "server/config.php";
                         <th colspan="2" class="table_name_main"><a target="_blank">МОИ КРЕДИТЫ</a></th>
                     </tr>
                 </thead>
-                <?php require "./server/credits_info.php" ?>
+                <?php require_once "./server/credits_info.php" ?>
             </table>
         </div>
     </div>
     <!-- test -->
-    <?php require "blocks/footer.php" ?>
+    <?php require_once "blocks/footer.php" ?>
 </body>
 
 </html>

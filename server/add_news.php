@@ -3,7 +3,7 @@
   ini_set('display_errors', 1);
   ini_set('display_startup_errors', 1);
 
-  require "config.php";
+  require_once "config.php";
   global $db;
   $tittle=$_POST["tittle"];
   $intro_text=$_POST["intro_text"]; 
