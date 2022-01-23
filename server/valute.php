@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-require "config.php";
 require "utils.php";
 
 $responseData = api_call($api_url."/valute", "GET", "")->ValCurs;
