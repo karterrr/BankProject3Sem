@@ -37,16 +37,17 @@ require_once "server/config.php";
 
 
         <div class="check_fill mt-3">
-            <table name="check_fill" class="informer_table">
+            <table class="informer_table">
                 <thead>
                     <tr>
                         <th colspan="2" class="table_name"><a target="_blank">Список платежей</a></th>
                     </tr>
                 </thead>
-                <tbody>
+
                     <?php require_once "./server/pay_info.php" ?>
-                </tbody>
+
             </table>
+            <?php require "blocks/footer.php" ?>
         </div>
 
         <div class="card_fill mt-3">
@@ -62,15 +63,15 @@ require_once "server/config.php";
                         <th>Дата</th>
                         <th>Сумма</th>
                     </tr>
-                    <?php require_once "./server/card_history_main.php" ?>
+                    <!-- test -->
                 </tbody>
             </table>
+            <?php require "blocks/footer.php" ?>
         </div>
-    </div>
-    </div>
+        
     </div>
     <!-- test -->
-    <?php require_once "blocks/footer.php" ?>
+    
 </body>
 
 </html>

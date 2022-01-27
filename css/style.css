@@ -91,10 +91,6 @@
     border-collapse: collapse;
 }
 
-.col2 td{
-    min-width: 50%;
-}
-
 .col2_main {
     color: #669;
     border-bottom: 1px solid #e8edff;
@@ -121,7 +117,11 @@
     padding: 5px 15px;
 }
 
+.form-control_card{
 
+    width: 500px;
+    min-width: 412px;
+}
 .newnews {
     margin-left: 1%;
 }

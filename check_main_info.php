@@ -43,13 +43,16 @@ require_once "server/utils.php";
 
             $i = $i + 1;
         }
+        if ($_GET['id'] != $array[$i]->id) {
+            header("Location:index.php");
+        }
     }
 
     ?>
     <div class="container mt-5">
         <a href="/index.php">На главную</a>
         <div class="card_border mt-5">
-            <div class="form-control col rounded border bg-light border-2 mb-5 w-50 h-auto mx-auto pa-col">
+            <div class="form-control_card col rounded border bg-light border-2 mb-5 w-50 h-auto mx-auto pa-col">
                 <h2 class="h3 mt-4 ps-5"><?php if(($array[$i]->name)!=""){ echo $array[$i]->name;} else print "Текущий счёт"  ?> </h2>
                 <h3 class="mt-5 mb-5 pe-5 text-end"><?= $array[$i]->count ?></h3>
                 <h3 class="h4 mb-4 ps-5"><?= $array[$i]->number ?></h3>

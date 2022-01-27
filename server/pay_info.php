@@ -12,8 +12,8 @@ $i = 0;
 if ($responseData->success === TRUE) {
     while ($i < count($array)) {
 ?>
-        <tbody class="card_info" onclick="window.click_pay(<?php echo $array[$i]->id?>);">
-            <tr>
+        <tbody onclick="window.click_pay(<?php echo $array[$i]->id?>);">
+            <tr class="col2" >
                 <td align="left"><?php echo $array[$i]->name ?></td>
             </tr>
         </tbody>
