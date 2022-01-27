@@ -10,18 +10,18 @@
 
     <title>DruzhBank</title>
 </head>
-<?php require "../blocks/header.php" ?>
+<?php require_once "../blocks/header.php" ?>
 
 <body>
 
     <div class="menu container mt-5 justify-content-md-center text-center">
-        <?php require "pa_blocks/pa_header.php" ?>
+        <?php require_once "pa_blocks/pa_header.php" ?>
         <div class="row mt-5 rounded border bg-light border-2">
             <h3>Поддержка</h3>
         </div>
     </div>
     
 
-    <?php require "../blocks/footer-min.php" ?>
+    <?php require_once "../blocks/footer-min.php" ?>
 </body>
 </html>

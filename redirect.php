@@ -4,7 +4,7 @@
     
     session_start();
     
-    require "server/config.php";
+    require_once "server/config.php";
 
 
     if(isset($_SESSION['id']))

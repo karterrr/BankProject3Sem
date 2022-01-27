@@ -18,7 +18,7 @@
         <title>Gachi Bank</title>
     </head>
     <body>
-        <?php require "blocks/header.php" ?>
+        <?php require_once "blocks/header.php" ?>
         <div class="container mt-5">
             <form action="server/add_news.php "enctype="multipart/form-data" method="post">
                     <div class="form-group">
@@ -46,7 +46,7 @@
                 
             </form>
         </div>
-        <?php require "blocks/footer.php" ?>
+        <?php require_once "blocks/footer.php" ?>
     </body>
     </html>   
 

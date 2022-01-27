@@ -1,6 +1,6 @@
 <?php 
 session_start();
-require "../server/config.php";
+require_once "../server/config.php";
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -17,16 +17,16 @@ require "../server/config.php";
 
 
 <body>
-<?php require "../blocks/header.php" ?>
+<?php require_once "../blocks/header.php" ?>
     <div class="menu container mt-5 justify-content-md-center text-center">
-        <?php require "pa_blocks/pa_header.php" ?>
+        <?php require_once "pa_blocks/pa_header.php" ?>
         <div class="row mt-5">
             <div class="form-control col rounded border bg-light border-2 pa-col">
                 Сменить имя
                 <form action="/server/change_name.php" method="post">
                     <h3 class="h4 mt-5">Ваше текущее имя</h3>
                     <h3 class="mt-4"><?php print $_SESSION['name']?></h3>
-                    <input class="form-control mt-5 mb-2" type="text" name="new_name" placeholder="Новое имя" required=""/>
+                    <input class="form-control mt-5 mb-2" type="text" name="new_name" placeholder="Новое имя" require_onced=""/>
                     <div class="d-grid">
                         <button type="submit" name="sub" class="btn btn-primary mt-4 ">Изменить имя</button>
                     </div>
@@ -38,15 +38,15 @@ require "../server/config.php";
                 Сменить пароль
                 <form action="/server/change_password.php" method="post">
                 <div class="password">
-                    <input id="password-input" class="form-control mt-5" type="password" name="cur_password" placeholder="Введите старый пароль" required=""/>
+                    <input id="password-input" class="form-control mt-5" type="password" name="cur_password" placeholder="Введите старый пароль" require_onced=""/>
                     <a href="#" class="password-control" onclick="return show_hide_password(this);"></a>
                 </div>
                 <div class="password">
-                    <input id="password-input" class="form-control mt-4" type="password" name="new_password" placeholder="Новый пароль" required=""/>
+                    <input id="password-input" class="form-control mt-4" type="password" name="new_password" placeholder="Новый пароль" require_onced=""/>
                     <!-- <a href="#" class="password-control" onclick="return show_hide_password(this);"></a> -->
                 </div>
                 <div class="password">
-                    <input id="password-input" class="form-control mt-4 mb-3" type="password" name="new_password_check" placeholder="Повторите пароль" required=""/>
+                    <input id="password-input" class="form-control mt-4 mb-3" type="password" name="new_password_check" placeholder="Повторите пароль" require_onced=""/>
                     <!-- <a href="#" class="password-control" onclick="return show_hide_password(this);"></a> -->
                 </div>
                     <div class="d-grid">
@@ -57,16 +57,16 @@ require "../server/config.php";
         </div>
     </div>
 
-    <?php require "../blocks/footer-min.php"?>
-    <?php require "pa_popups/same_name_popup.php"?>
-    <?php require "pa_popups/same_user_name_popup.php"?>
-    <?php require "pa_popups/success_name_change_popup.php"?>
-    <?php require "pa_popups/seccess_pass_change_popup.php"?>
-    <?php require "pa_popups/incorrect_cur_pass_popup.php"?>
-    <?php require "pa_popups/new_pass_eq_cur_pass_popup.php"?>
-    <?php require "pa_popups/new_pass_neq_popup.php"?>
-    <?php require "pa_popups/avatar_size_exeption.php"?>
-    <?php require "pa_popups/support_popup.php"?>
+    <?php require_once "../blocks/footer-min.php"?>
+    <?php require_once "pa_popups/same_name_popup.php"?>
+    <?php require_once "pa_popups/same_user_name_popup.php"?>
+    <?php require_once "pa_popups/success_name_change_popup.php"?>
+    <?php require_once "pa_popups/seccess_pass_change_popup.php"?>
+    <?php require_once "pa_popups/incorrect_cur_pass_popup.php"?>
+    <?php require_once "pa_popups/new_pass_eq_cur_pass_popup.php"?>
+    <?php require_once "pa_popups/new_pass_neq_popup.php"?>
+    <?php require_once "pa_popups/avatar_size_exeption.php"?>
+    <?php require_once "pa_popups/support_popup.php"?>
 
 </body>
 </html>

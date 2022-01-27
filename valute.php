@@ -1,6 +1,6 @@
 <?php
 session_start();
-require "server/config.php";
+require_once "server/config.php";
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -14,7 +14,7 @@ require "server/config.php";
     <link rel="icon" href="/sys_img/logo.png" type="image/x-icon">
     <title>DruzhBank</title>
 </head>
-<?php require "blocks/header.php" ?>
+<?php require_once "blocks/header.php" ?>
 <body>
 
     <?php
@@ -60,7 +60,7 @@ require "server/config.php";
                         <th>Валюта</th>
                         <th>RUB</th>
                     </tr>
-                    <?php require "server/valute.php" ?>
+                    <?php require_once "server/valute.php" ?>
                     <tr class="col-data">
                         <td colspan="2" class="table_name"><time class="ftDateTime" datetime="2022-01-09UTC13:26">Дата <span class="ftDateTimeStr"><?php echo $date ?></span></time></td>
                     </tr>
@@ -69,7 +69,7 @@ require "server/config.php";
         </div>
     </div>
     <!-- test -->
-    <?php require "blocks/footer.php" ?>
+    <?php require_once "blocks/footer.php" ?>
 </body>
 
 </html>

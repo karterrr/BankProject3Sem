@@ -4,4 +4,4 @@
     </div>
 </div>
 
-<?php require "registration.php" ?>
+<?php require_once "registration.php" ?>

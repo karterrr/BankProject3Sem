@@ -1,6 +1,6 @@
 <?php
     session_start();
-    require "server/config.php";
+    require_once "server/config.php";
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -14,9 +14,9 @@
     <title>Gachi Bank</title>
 </head>
 <body>
-    <?php require "blocks/header.php" ?>
+    <?php require_once "blocks/header.php" ?>
     <?php  
-    require "server/config.php" ;
+    require_once "server/config.php" ;
     ini_set('error_reporting', E_ALL);
     ini_set('display_errors', 0);
     ini_set('display_startup_errors', 0);
@@ -67,7 +67,7 @@
             <img src="sys_img/pen.png" width="40">
             </form>
             
-        </button>
+        </div>
 
                 <?php
             }
@@ -119,7 +119,7 @@
                 <?php
                 }
                 ?>
-                <?php  require "server/config.php";
+                <?php  require_once "server/config.php";
                  global $db;
                 $res = $db->query("SELECT count(*) FROM  comments WHERE id_news=$d");
                         $row = $res->fetch_row();
@@ -175,6 +175,6 @@
     </div>
 </section>
 
-    <?php require "blocks/footer.php" ?>
+    <?php require_once "blocks/footer.php" ?>
 </body>
 </html>

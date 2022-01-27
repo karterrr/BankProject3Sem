@@ -5,7 +5,7 @@
   ini_set( 'upload_max_size' , '12M' );
   ini_set( 'post_max_size', '12M');
   ini_set( 'max_execution_time', '150' );
-  require "config.php";
+  require_once "config.php";
   $tittle=$_POST["tittle"];
   $d=$_POST["n_id"];
   $intro_text=$_POST["intro_text"]; 

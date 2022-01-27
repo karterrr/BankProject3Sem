@@ -1,6 +1,6 @@
 <?php
 session_start();
-require "server/config.php";
+require_once "server/config.php";
 
 ?>
 
@@ -16,7 +16,7 @@ require "server/config.php";
     <link rel="icon" href="/sys_img/logo.png" type="image/x-icon">
     <title>DruzhBank</title>
 </head>
-<?php require "blocks/header.php" ?>
+<?php require_once "blocks/header.php" ?>
 
 <body>
 
@@ -37,7 +37,7 @@ require "server/config.php";
                 На карту из списка:
                 <select name="card_transit" class="form-select mt-3 mb-4" aria-label="Default select example">
                     <option value="0" selected>Выбор карты</option>
-                    <?php require "./server/refill_card.php" ?>
+                    <?php require_once "./server/refill_card.php" ?>
                 </select>
                 Или же
                 <input type="text" name="bank_number" class="form-control mt-3" placeholder="Введите карту любого банка" aria-label="Введите карту любого банка" aria-describedby="addon-wrapping">
@@ -71,7 +71,7 @@ require "server/config.php";
     </div>
     </div>
     <!-- test -->
-    <?php require "blocks/footer.php" ?>
+    <?php require_once "blocks/footer.php" ?>
 </body>
 
 </html>

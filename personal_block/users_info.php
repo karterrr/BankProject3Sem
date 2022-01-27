@@ -1,6 +1,6 @@
 <?php 
 session_start();
-require "../server/config.php";
+require_once "../server/config.php";
 setlocale(LC_ALL, "ru_RU.CP1251");
 ?>
 
@@ -20,12 +20,12 @@ if($_SESSION['root']==1)
 
         <title>DruzhBank</title>
     </head>
-    <?php require "../blocks/header.php" ?>
+    <?php require_once "../blocks/header.php" ?>
 
     <body>
 
         <div class="menu container mt-5 justify-content-md-center text-center">
-            <?php require "pa_blocks/pa_header.php" ?>
+            <?php require_once "pa_blocks/pa_header.php" ?>
             <div class="users_list row mt-5 rounded border bg-light border-2">
                 <h3 class="h4">Список пользователей</h3>
                 <div>
@@ -174,9 +174,9 @@ if($_SESSION['root']==1)
         </div>
         
 
-        <?php require "../blocks/footer-min.php" ?>
-        <?php require "pa_popups/support_popup.php"?>
-        <?php require "pa_papups/users_not_search_popup.php"?>
+        <?php require_once "../blocks/footer-min.php" ?>
+        <?php require_once "pa_popups/support_popup.php"?>
+        <?php require_once "pa_papups/users_not_search_popup.php"?>
     </body>
     </html>
     <?php

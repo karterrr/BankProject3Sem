@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    require "server/config.php";
+    require_once "server/config.php";
 
     if(!isset($_SESSION['id']))
     {
@@ -40,7 +40,7 @@
                 <button type="button" class="newnews btn btn-secondary mb-5" onclick="document.location='registration.php'">Регистрация</button>
             </div>
             
-            <?php require "blocks/footer-min.php" ?>
+            <?php require_once "blocks/footer-min.php" ?>
         </body>
         </html>
 

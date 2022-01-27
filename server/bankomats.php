@@ -1,7 +1,8 @@
 <?php
 session_start();
 
-require "utils.php";
+require_once "config.php";
+require_once "utils.php";
 
 $responseData = api_call($api_url."/bankomats", "GET", "");
 

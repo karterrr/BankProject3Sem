@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-require "config.php";
+require_once "config.php";
 
 if($_SESSION['root']==1)
 {

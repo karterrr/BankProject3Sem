@@ -1,6 +1,6 @@
 <?php
 session_start();
-require "../server/config.php";
+require_once "../server/config.php";
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -18,9 +18,9 @@ require "../server/config.php";
 
 
 <body>
-<?php require "../blocks/header.php" ?>
+<?php require_once "../blocks/header.php" ?>
     <div class="menu container mt-5 justify-content-md-center text-center">
-        <?php require "pa_blocks/pa_header.php" ?>
+        <?php require_once "pa_blocks/pa_header.php" ?>
         <div class=" row mt-5 rounded border bg-light border-2">
             <div class="col">
                 Логин
@@ -56,7 +56,7 @@ require "../server/config.php";
                         <th>Дата</th>
                         <th>Время</th>
                     </tr>
-                    <?php require "../server/lastlogins_info.php" ?>
+                    <?php require_once "../server/lastlogins_info.php" ?>
                 </tbody>
             </table>
         </div>
@@ -64,8 +64,8 @@ require "../server/config.php";
 
 
 
-    <?php require "../blocks/footer-min.php" ?>
-    <?php require "pa_popups/support_popup.php" ?>
+    <?php require_once "../blocks/footer-min.php" ?>
+    <?php require_once "pa_popups/support_popup.php" ?>
 </body>
 
 </html>

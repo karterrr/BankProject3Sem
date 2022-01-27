@@ -4,7 +4,7 @@
 //  ini_set('display_errors', 1);
 //  ini_set('display_startup_errors', 1);
 session_start();
-require "config.php";
+require_once "config.php";
     if($_SESSION['root']==1 && isset($_SESSION['id']))
     {
 ?>
@@ -19,13 +19,13 @@ require "config.php";
         <title>News Today</title>
     </head>
     <body>
-        <?php require "../blocks/header.php" ?>
+        <?php require_once "../blocks/header.php" ?>
         <?php  
                 global $db;
                 ini_set('error_reporting', E_ALL);
                 ini_set('display_errors', 1);
                 ini_set('display_startup_errors', 1);
-                require "config.php";
+                require_once "config.php";
                 $d=  $_POST["id_n_c"];
                 $query=mysqli_query($db, "SELECT * FROM `news` WHERE `id`='$d' ");
                 $news=mysqli_fetch_assoc($query);
@@ -53,23 +53,23 @@ require "config.php";
                     </div>
                     <div class="form-group mt-5">
                         <label for="heading">Заголовок:</label>
-                        <?php echo'<input class="form-control" required  type="text" id="tittle" name="tittle" value ="';
+                        <?php echo'<input class="form-control" require_onced  type="text" id="tittle" name="tittle" value ="';
                          echo $tittle;echo'"'?>;
                     </div>  
                     <div class="form-group mt-5">
                         <label for="desc">Краткое описание:</label>
-                        <textarea class="form-control" required id="desc" type="text"  name="intro_text"><?php echo $intro_text?></textarea>
+                        <textarea class="form-control" require_onced id="desc" type="text"  name="intro_text"><?php echo $intro_text?></textarea>
                     </div>
                     <div class="form-group mt-5">
                         <label for="article">Статья:</label>
-                        <textarea class="form-control" type="text"  required id="full_text" name="full_text"><?php echo $full_text?></textarea>
+                        <textarea class="form-control" type="text"  require_onced id="full_text" name="full_text"><?php echo $full_text?></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary mt-5">Submit</button>
                     <!-- После нажатия все данные с форм отправляются там куда-то вам и после должны на главной появиться -->
                 
             </form>
         </div>
-        <?php require "../blocks/footer.php" ?>
+        <?php require_once "../blocks/footer.php" ?>
     </body>
     </html>   
 
