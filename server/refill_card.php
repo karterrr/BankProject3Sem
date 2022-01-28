@@ -8,13 +8,15 @@ $data = array(
     'token' => $_SESSION['id'],
 );
 
-$responseData = api_call($api_url."/category", "POST", $data);
+$responseData = api_call($api_url."/getcards", "POST", $data);
 
 $array = $responseData->data;
 //var_dump($array[0]);
 $i = 0;
 if ($responseData->success === TRUE) {
     while ($i < count($array)) {
+        if($array[$i]->is_blocked==FALSE)
+        {
         if ($array[$i]->id != $_GET['id']) {
 ?>
             <option value=<?=$array[$i]->number ?>><?= substr($array[$i]->number, 0, 4), "****", substr($array[$i]->number, 12, 15) ?></option>
@@ -23,7 +25,9 @@ if ($responseData->success === TRUE) {
         else{
             $this_card=$array[$i]->number;
         }
-        $i = $i + 1;
     }
+        $i = $i + 1;
+    
+}
 }
 ?>

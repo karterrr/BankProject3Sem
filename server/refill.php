@@ -59,7 +59,7 @@ if(isset($_SESSION['id']))
         //var_dump($responseData);
         if($responseData==TRUE)
         {
-           header("Location:/card_main_info.php?id=".$_POST['id']);
+           header("Location:/card_main_info.php?id=".$_POST['id']."&page=1");
            //print ("work");
         }
         else

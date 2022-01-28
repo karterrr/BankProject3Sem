@@ -21,7 +21,7 @@ if ($responseData->success === TRUE) {
         <tbody class="card_info" onclick="window.clicka(<?php echo $array[$i]->id?>);">
             <tr>
                 <td align="left"><?php echo $array[$i]->name ?></td>
-                <td class="col2_main" rowspan="2"><?php echo $array[$i]->count ?></td>
+                <td class="col2_main" rowspan="2"><?php echo $array[$i]->count, " руб." ?></td>
             </tr>
             <tr>
                 <td align="left" class="col2_main"><?php echo substr($array[$i]->number, 0, 4), "****", substr($array[$i]->number, 12, 15) ?></td>
@@ -30,7 +30,7 @@ if ($responseData->success === TRUE) {
         <script>
             function clicka(a) {        
                 console.log(a);
-                location.href = "./card_main_info.php?id=" + a;
+                location.href = "./card_main_info.php?id=" + a +"&page=1";
             }
         </script>
 <?php

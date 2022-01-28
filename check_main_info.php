@@ -27,7 +27,7 @@ require_once "server/utils.php";
         'token' => $_SESSION['id'],
     );
 
-    $responseData = api_call($api_url."/getcheck", "POST", $data);
+    $responseData = api_call($api_url . "/getcheck", "POST", $data);
 
     $array = $responseData->data;
     //var_dump($array[0]);
@@ -53,8 +53,10 @@ require_once "server/utils.php";
         <a href="/index.php">На главную</a>
         <div class="card_border mt-5">
             <div class="form-control_card col rounded border bg-light border-2 mb-5 w-50 h-auto mx-auto pa-col">
-                <h2 class="h3 mt-4 ps-5"><?php if(($array[$i]->name)!=""){ echo $array[$i]->name;} else print "Текущий счёт"  ?> </h2>
-                <h3 class="mt-5 mb-5 pe-5 text-end"><?= $array[$i]->count ?></h3>
+                <h2 class="h3 mt-4 ps-5"><?php if (($array[$i]->name) != "") {
+                                                echo $array[$i]->name;
+                                            } else print "Текущий счёт"  ?> </h2>
+                <h3 class="mt-5 mb-5 pe-5 text-end"><?= $array[$i]->count, " руб." ?></h3>
                 <h3 class="h4 mb-4 ps-5"><?= $array[$i]->number ?></h3>
             </div>
         </div>
@@ -88,6 +90,11 @@ require_once "server/utils.php";
                     <?php require_once "./server/check_history_main.php" ?>
                 </tbody>
             </table>
+
+            <nav aria-label="check_history">
+                <?php require "./server/check_history_pagination.php" ?>
+            </nav>
+
         </div>
     </div>
     <!-- test -->

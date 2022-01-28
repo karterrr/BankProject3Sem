@@ -28,7 +28,7 @@ if ($responseData->success === TRUE) {
         <tbody class="card_info" onclick="window.click();">
                 <tr>
                     <td align="left"><?=$array[$i]->name?></td>
-                    <td class="col2_main" rowspan="2"><?=  $array[$i]->count ?></td>
+                    <td class="col2_main" rowspan="2"><?=  $array[$i]->count," руб." ?></td>
                 </tr>
                 <tr>
                     <td align="left" class="col2_main"><?php echo substr($array[$i]->payment_date, 0, 10) ?></td>

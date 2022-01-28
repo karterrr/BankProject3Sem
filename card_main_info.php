@@ -28,7 +28,7 @@ require_once "server/utils.php";
         'token' => $_SESSION['id'],
     );
 
-    $responseData = api_call($api_url."/getcards", "POST", $data);
+    $responseData = api_call($api_url . "/getcards", "POST", $data);
 
     $array = $responseData->data;
     //var_dump($array[0]);
@@ -56,7 +56,7 @@ require_once "server/utils.php";
             <div class="form-control_card col rounded border bg-light border-2 mb-5 w-50 h-auto mx-auto pa-col">
                 <h2 class="h3 mt-5 ps-5"><?= $array[$i]->name ?> </h2>
                 <h3 class="h4 mt-4 ps-5"><?= $array[$i]->number ?></h3>
-                <h3 class="mt-5 mb-5 ps-5"><?= $array[$i]->count ?></h3>
+                <h3 class="mt-5 mb-5 ps-5"><?= $array[$i]->count, " руб." ?></h3>
             </div>
         </div>
         <?php
@@ -133,6 +133,12 @@ require_once "server/utils.php";
                         <?php require_once "./server/card_history_main.php" ?>
                     </tbody>
                 </table>
+
+                <nav aria-label="card_history">
+                    <?php require "./server/card_history_pagination.php" ?>
+                    
+                </nav>
+
             </div>
         <?php
         }

@@ -26,7 +26,7 @@ require_once "server/config.php";
     }
     ?>
     <div class="container mt-5">
-    <a href="/card_main_info.php?id=<?=$_GET['id']?>">Назад</a>
+    <a href="/card_main_info.php?id=<?=$_GET['id']?>&page=1">Назад</a>
         <div style="text-align: center;">
             <h3 class="newnews mb-5">Пополнение</h3>
         </div>
