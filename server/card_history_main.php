@@ -35,7 +35,7 @@ if ($responseDatacheck->success === TRUE) {
                 elseif($arraycheck[$j]->type==1)
                 {
                 ?>
-                <td>Перевод на счёт</td>
+                <td>Перевод на счёт:    <?= "****", substr($arraycheck[$j]->dest, 4, 12)?></td>
                 <?php
                 }
                 else
