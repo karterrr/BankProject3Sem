@@ -418,3 +418,7 @@ body {
 .copied-label-act {
     visibility: visible;
 }
+
+#map {
+    height: 100%;
+}
