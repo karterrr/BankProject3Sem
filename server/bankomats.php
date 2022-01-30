@@ -15,24 +15,29 @@ $responseData = api_call($api_url."/bankomats", "GET", "");
         <script type="text/javascript">
         ymaps.ready(init);
         var myMap = null;
+        var markerDataArray = [];
         var markerArray = [];
         function init(){
             myMap = new ymaps.Map("map", {
                 center: [131.90580314735217, 43.08645022493277],
                 zoom: 11 //0-19
             });
-            for(const elem of markerArray){
-                myMap.geoObjects.add(new ymaps.Placemark((elem), { balloonContentHeader: elem.type,
-                balloonContentBody: elem.adress,
-                balloonContentFooter: elem.time,
-                hintContent: elem.type}))
+            for(const elem of markerDataArray){
+                var tempMarker = new ymaps.Placemark((elem), { balloonContentHeader: elem.type,
+                    balloonContentBody: elem.adress,
+                    balloonContentFooter: elem.time,
+                    hintContent: elem.type
+                });
+                myMap.geoObjects.add(tempMarker);
+                markerArray.push(tempMarker);
             }
         }
-        function focusPos(long, lat){
+        function focusPos(ind){
             if(myMap != null){
-                myMap.setCenter([long, lat], 14, {
+                myMap.setCenter(markerDataArray[ind], 14, {
                   duration: 300
                });
+               markerArray[ind].balloon.open();
             }
         }
         </script>
@@ -48,9 +53,9 @@ $array = $responseData;
 $i = 0;
 while ($i < count($array)) {
 ?>  <script type="text/javascript"> var curPoint = [<?php $pointArray = json_decode($array[$i]->coordinates)->features[0]->geometry->coordinates; $pointString = $pointArray[0].",".$pointArray[1]; echo $pointString; $array[$i]->time = "Часы работы:  ".substr($array[$i]->time_start, 0, 5)."-".substr($array[$i]->time_end, 0, 5); ?>];
-    curPoint.type = "<?php if ($array[$i]->is_atm) {echo "Банкомат"; } else {echo "Отделение банка"; }?>"; curPoint.adress = "<?= $array[$i]->adress?>"; curPoint.time = "<?= $array[$i]->time ?>"; markerArray.push(curPoint);
+    curPoint.type = "<?php if ($array[$i]->is_atm) {echo "Банкомат"; } else {echo "Отделение банка"; }?>"; curPoint.adress = "<?= $array[$i]->adress?>"; curPoint.time = "<?= $array[$i]->time ?>"; markerDataArray.push(curPoint);
     </script>
-    <tbody class="card_info" onclick="window.focusPos(<?= $pointString ?>);">
+    <tbody class="card_info" onclick="window.focusPos(<?= $i ?>);">
         <tr>
             <td align="left" colspan="2"><?= $array[$i]->adress ?></td>
 
