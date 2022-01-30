@@ -15,18 +15,18 @@ $responseData = api_call($api_url."/bankomats", "GET", "");
         <script type="text/javascript">
         ymaps.ready(init);
         var myMap = null;
+        var markerArray = [];
         function init(){
             myMap = new ymaps.Map("map", {
                 center: [131.90580314735217, 43.08645022493277],
                 zoom: 11 //0-19
             });
-            <?php foreach($responseData as &$geoJS){ ?>
-
-            var temp = JSON.parse(<?php echo json_encode($geoJS->coordinates) ?>);
-            var objectManager = new ymaps.ObjectManager();
-            objectManager.add(temp);
-            myMap.geoObjects.add(objectManager);
-             <?php }?>
+            for(const elem of markerArray){
+                myMap.geoObjects.add(new ymaps.Placemark((elem), { balloonContentHeader: elem.type,
+                balloonContentBody: elem.adress,
+                balloonContentFooter: elem.time,
+                hintContent: elem.type}))
+            }
         }
         function focusPos(long, lat){
             if(myMap != null){
@@ -47,8 +47,10 @@ $array = $responseData;
 
 $i = 0;
 while ($i < count($array)) {
-?>
-    <tbody class="card_info" onclick="window.focusPos(<?php $point = json_decode($array[$i]->coordinates)->features[0]->geometry->coordinates; echo $point[0].",".$point[1]?>);">
+?>  <script type="text/javascript"> var curPoint = [<?php $pointArray = json_decode($array[$i]->coordinates)->features[0]->geometry->coordinates; $pointString = $pointArray[0].",".$pointArray[1]; echo $pointString; $array[$i]->time = "Часы работы:  ".substr($array[$i]->time_start, 0, 5)."-".substr($array[$i]->time_end, 0, 5); ?>];
+    curPoint.type = "<?php if ($array[$i]->is_atm) {echo "Банкомат"; } else {echo "Отделение банка"; }?>"; curPoint.adress = "<?= $array[$i]->adress?>"; curPoint.time = "<?= $array[$i]->time ?>"; markerArray.push(curPoint);
+    </script>
+    <tbody class="card_info" onclick="window.focusPos(<?= $pointString ?>);">
         <tr>
             <td align="left" colspan="2"><?= $array[$i]->adress ?></td>
 
@@ -62,7 +64,7 @@ while ($i < count($array)) {
                                                 if ($array[$i]->is_working) { ?> <p1 style="color: green;">Работает</p1> <?php } else {
                                                                                                                             ?> <p1 style="color: red;">Не работает</p1> <?php
                                                                                                                         } ?></td>
-            <td class="col2_main"><?php echo "Часы работы:  ", substr($array[$i]->time_start, 0, 5), "-", substr($array[$i]->time_end, 0, 5) ?></td>
+            <td class="col2_main"><?= $array[$i]->time?></td>
         </tr>
     </tbody>
 <?php
