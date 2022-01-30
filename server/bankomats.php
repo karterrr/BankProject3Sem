@@ -36,7 +36,7 @@ $responseData = api_call($api_url."/bankomats", "GET", "");
             }
         }
         </script>
-       <div id="map" style="width: 600px; height: 400px"></div>
+       <div id="map" style="width: 90%; height: 400px"></div>
    </div>
 <?php
 

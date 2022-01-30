@@ -422,3 +422,12 @@ body {
 #map {
     height: 100%;
 }
+
+#map_section {
+    width: 100%;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
