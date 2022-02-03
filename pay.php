@@ -27,7 +27,7 @@ require_once "server/config.php";
     ?>
     <div class="container mt-5">
         <div style="text-align: center;">
-            <h3 class="newnews mb-5">Платежи</h3>
+            <h3 class="newnews mb-5">Платежи и шаблоны</h3>
         </div>
 
         <input type="radio" class="btn-check" name="radio" id="check_fill" autocomplete="off" checked>
@@ -54,17 +54,10 @@ require_once "server/config.php";
             <table class="informer_table">
                 <thead>
                     <tr>
-                        <th colspan="3" class="table_name"><a target="_blank">История по карте</a></th>
+                        <th colspan="3" class="table_name"><a target="_blank">Список шаблонов</a></th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr class="col3">
-                        <th>Тип операции</th>
-                        <th>Дата</th>
-                        <th>Сумма</th>
-                    </tr>
-                    <!-- test -->
-                </tbody>
+                <?php require_once "./server/templates_info.php" ?>
             </table>
             <?php require "blocks/footer.php" ?>
         </div>

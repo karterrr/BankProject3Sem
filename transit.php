@@ -36,7 +36,7 @@ require_once "server/config.php";
             <div class="card_transit mt-4">
                 На карту из списка:
                 <select name="card_transit" class="form-select mt-3 mb-4" aria-label="Default select example">
-                    <option value="0" selected>Выбор карты</option>
+                    <option value=null selected>Выбор карты</option>
                     <?php require_once "./server/refill_card.php" ?>
                 </select>
                 Или же

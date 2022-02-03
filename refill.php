@@ -42,7 +42,7 @@ require_once "server/config.php";
             <div class="check_fill mt-3">
                 <div class="input-group">
                     <select name="check_fill" class="form-select" aria-label="Default select example">
-                        <option value="0" selected>Выбор счёта</option>
+                        <option value="null" selected>Выбор счёта</option>
                         <?php require_once "./server/refill_check.php" ?>
                     </select>
                 </div>
@@ -51,7 +51,7 @@ require_once "server/config.php";
             <div class="card_fill mt-3">
                 <div class="input-group">
                     <select name="card_fill" class="form-select" aria-label="Default select example">
-                        <option value="0" selected>Выбор карты</option>
+                        <option value="null" selected>Выбор карты</option>
                         <?php require_once "./server/refill_card.php" ?>
                     </select>
                 </div>

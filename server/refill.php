@@ -13,22 +13,29 @@ if(isset($_SESSION['id']))
         if (isset($_POST['count'])) { $count = $_POST['count']; if ($count == '') { unset($count);} } //заносим введенный пользователем логин в переменную $new_login, если он пустой, то уничтожаем переменную
 
         //print $email." ".$password;
-        if (empty($_POST['card_fill']) and empty($_POST['check_fill'])) //если пользователь не ввел логин, то выдаем ошибку и останавливаем скрипт
+        if ($_POST['card_fill']=="null" and $_POST['check_fill']=="null") //если пользователь не ввел логин, то выдаем ошибку и останавливаем скрипт
         {          
             header( "Location:/refill.php?id=".$_POST['id']);  
+            exit();
         }
-        if ($_POST['card_fill'] and $_POST['check_fill']) 
+        if ($_POST['card_fill']!="null" and $_POST['check_fill']!="null") 
         {          
-            header( "Location:/refill.php?id=".$_POST['id']);  
+            header( "Location:/refill.php?id=".$_POST['id']); 
+            exit(); 
         }
 
         if ($_SESSION['password']!=$_POST['password'])
         {
             header("Location:/refill.php?id=".$_POST['id']);
+            exit();
         }
         
+        if ((int)$_POST['count']==0) {
+            header("Location:/refill.php?id=".$_POST['id']);
+            exit();
+        }
 
-        if ($_POST['card_fill'])
+        if ($_POST['card_fill']!="null")
         {
             $source=$_POST['card_fill'];
         }

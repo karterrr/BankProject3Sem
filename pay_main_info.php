@@ -33,7 +33,7 @@ require_once "server/config.php";
             <div class="card_pay mt-4">
                 Введите номер договора:
                 <input type="text" name="bank_number" class="form-control mt-3 mb-4" placeholder="Номер договора" aria-label="Номер договора" aria-describedby="addon-wrapping">
-                Выберете карту:
+                Оплата с карты:
                 <select name="card_pay" class="form-select mt-3 mb-4" aria-label="Default select example">
                     <option value="0" selected>Выбор карты</option>
                     <?php require_once "./server/pay_card.php" ?>
