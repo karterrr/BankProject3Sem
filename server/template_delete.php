@@ -14,7 +14,7 @@ if (isset($_SESSION['id'])) {
             'token' => $_SESSION['id'],
             'id' => (int)$_POST['id']
         );
-        $responseData = api_call($api_url."/templates/delete", "DELETE", $data);
+        $responseData = api_call($api_url."/templates/delete", "POST", $data);
 
         //var_dump($responseData);
         if ($responseData == TRUE) {
