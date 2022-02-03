@@ -11,7 +11,7 @@ $e = 0;
 if ($responseDatacategory->success === TRUE) {
     while ($e < count($arraycategory)) {
 ?>
-        <option value=<?= $arraycategory[$e]->name ?>><?= $arraycategory[$e]->name ?></option>
+        <option value=<?= $arraycategory[$e]->id ?>><?= $arraycategory[$e]->name ?></option>
 <?php
         $e = $e + 1;
     }

@@ -17,34 +17,45 @@ if (isset($_SESSION['id'])) {
 
         //print $email." ".$password;
 
-        if ($_POST['check_fill']!="null")
-        {
+        if ($_POST['check_fill'] != "null") {
             $source = $_POST['check_fill'];
             $source_type = 1;
-        }
-        else
-        {
+        } else {
             $source = $_POST['card_fill'];
             $source_type = 0;
         }
 
-        if ($_POST['dest_card']!=null)
-        {
+
+
+        $responseDatacategory = api_call($api_url . "/category", "POST", $data);
+
+        $arraycategory = $responseDatacategory->data;
+        //var_dump($array[0]);
+        $e = 0;
+        
+
+        if ($_POST['dest_card'] != null) {
             $dest = $_POST['dest_card'];
             $dest_type = 0;
-        }
-        else
-        {
-            $dest = $_POST['dest_pay'];
+        } else {
+            if ($responseDatacategory->success === TRUE) {
+                while ($e < count($arraycategory)) {
+                    if($_POST['dest_pay']==$arraycategory[$e]->id)
+                    {
+                        $dest=$arraycategory[$e]->name;
+                    }
+                    $e = $e + 1;
+                }
+            }
             $dest_type = 2;
         }
 
-        if ($_POST['template_name']==null){
+        if ($_POST['template_name'] == null) {
             header("Location:/templates_new.php");
             exit("3");
         }
 
-        if ($_POST['card_fill']==$_POST['dest_card']){
+        if ($_POST['card_fill'] == $_POST['dest_card']) {
             header("Location:/templates_new.php");
             exit("3");
         }
@@ -53,21 +64,21 @@ if (isset($_SESSION['id'])) {
             header("Location:/templates_new.php");
             exit("1");
         }
-        if ((int)$_POST['count']==0) {
+        if ((int)$_POST['count'] == 0) {
             header("Location:/templates_new.php");
             exit("2");
         }
 
-        if ($_POST['check_fill']=="null" and $_POST['card_fill']=="null"){
+        if ($_POST['check_fill'] == "null" and $_POST['card_fill'] == "null") {
             header("Location:/templates_new.php");
             exit("3");
         }
 
-        if ($_POST['check_fill']!="null" and $_POST['card_fill']!="null"){
+        if ($_POST['check_fill'] != "null" and $_POST['card_fill'] != "null") {
             header("Location:/templates_new.php");
             exit("4");
         }
-        
+
         $data = array(
             'token' => $_SESSION['id'],
             'source' => $source,
@@ -78,7 +89,7 @@ if (isset($_SESSION['id'])) {
             'sum' => (int)$_POST['count']
         );
         var_dump($data);
-        $responseData = api_call($api_url."/templates/set", "POST", $data);
+        $responseData = api_call($api_url . "/templates/set", "POST", $data);
         var_dump($responseData);
 
         //var_dump($responseData);
