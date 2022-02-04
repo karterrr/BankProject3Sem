@@ -145,8 +145,8 @@ require_once "server/config.php";
                 <div class="form-control col rounded border bg-light border-2 pa-col">
                     <h3 class="d-grid gap-2 d-md-flex justify-content-md-center">Подтверждение</h3>
 
-                    <input class="form-control mt-5 mb-2" type="text" name="count" placeholder="Сумма пополнения" required="" />
-                    <input class="form-control mt-3 mb-2" type="text" name="password" placeholder="Пароль" required="" />
+                    <input class="form-control mt-5 mb-2" type="number" name="count" placeholder="Сумма пополнения" required="" />
+                    <input class="form-control mt-3 mb-2" type="password" name="password" placeholder="Пароль" required="" />
                     <div class="d-grid">
                         <button type="submit" name="sub" id="card_item2" class="btn btn-primary mt-4" disabled>Создать шаблон</button>
                     </div>

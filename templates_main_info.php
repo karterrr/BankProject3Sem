@@ -82,8 +82,8 @@ require_once "server/utils.php";
                 <div class="form-control col rounded border bg-light border-2 pa-col">
                     <h3 class="d-grid gap-2 d-md-flex justify-content-md-center">Подтверждение</h3>
                     <form action="/server/transit_template.php" method="post">
-                        <input class="form-control mt-5 mb-2" type="text" value="Сумма: <?= $arrayTempl[0]->sum ?> руб." required="" disabled />
-                        <input class="form-control mt-3 mb-2" type="text" name="password" placeholder="Пароль" required="" />
+                        <input class="form-control mt-5 mb-2" type="number" value="Сумма: <?= $arrayTempl[0]->sum ?> руб." required="" disabled />
+                        <input class="form-control mt-3 mb-2" type="password" name="password" placeholder="Пароль" required="" />
                         <input type="hidden" value="<?=$arrayTempl[0]->source ?>" name="source_number" />
                         <input type="hidden" value="<?=$arrayTempl[0]->dest ?>" name="dest_number" />
                         <input type="hidden" value="<?=$arrayTempl[0]->sum ?>" name="count" />
